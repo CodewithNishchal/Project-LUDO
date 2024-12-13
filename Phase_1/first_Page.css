@@ -1,5 +1,31 @@
-a
+body
+{
+    background-color: rgba(11, 74, 158, 0.789);
+}
+
+div#center_stage
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+div>.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    width: 25vh;
+    border-radius: 15%;
+    background: linear-gradient(132deg, rgb(0, 48, 143) 0.00%, rgb(0, 255, 255) 100.00%);
+    margin: 10px;
+}
+
+a.Player_detail
 {
     text-decoration: none;
-    color: black;
+    color: rgb(121, 28, 104);
+    font-size: 50px;
+    font-family: "Atma", system-ui;
 }
