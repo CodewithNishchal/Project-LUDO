@@ -1,6 +1,9 @@
 body
 {
     background-color: rgba(11, 74, 158, 0.789);
+    background-image: url('../ludo\ images/traditional ludo image background with Indian touch.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 div#center_stage

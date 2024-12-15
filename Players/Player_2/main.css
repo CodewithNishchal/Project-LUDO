@@ -1,0 +1,42 @@
+body
+{
+    background-color: rgba(11, 74, 158, 0.789);
+}
+
+#main-box
+{
+    display: grid;
+    height: 95vh;
+    width: 98%;
+    margin-top: 2vh;
+    grid-template: 1fr 1fr 1fr / 1fr 0.15fr;
+}
+
+div > #game-ludo
+{
+    grid-row: span 3;
+    background-color: black;
+}
+
+div > #dicee
+{
+    grid-row: span 2;
+    background-color: rgb(47, 56, 160);
+}
+
+div > #play-button
+{
+    background-color: transparent;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+button#play
+{
+    height: 10vh;
+    width: 60%;
+    border-radius: 20%;
+    margin-top: 20%;
+    font-size: xx-large;
+}
