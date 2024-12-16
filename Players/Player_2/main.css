@@ -1,6 +1,9 @@
 body
 {
     background-color: rgba(11, 74, 158, 0.789);
+    background-image: url('/ludo\ images/traditional ludo image background with Indian touch.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 #main-box
@@ -10,19 +13,34 @@ body
     width: 98%;
     margin-top: 2vh;
     grid-template: 1fr 1fr 1fr / 1fr 0.15fr;
+    /* display: none; */
 }
 
 div > #game-ludo
 {
     grid-row: span 3;
     background-color: black;
+    border-radius: 15%;
+    margin: 1%;
 }
 
 div > #dicee
 {
     grid-row: span 2;
     background-color: rgb(47, 56, 160);
+    border-radius: 50%;
+    margin-top: 1%;
+    background-image: url('/ludo\ images/Dice.png');
+    background-size: cover;
+    background-position: 40%;
+    border: solid black;
+    border-width: 0.5vh;
 }
+
+/* div > #dice-rotate
+{
+    
+} */
 
 div > #play-button
 {
