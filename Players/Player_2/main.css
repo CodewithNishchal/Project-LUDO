@@ -58,7 +58,7 @@ div > .dice-numbers
     grid-template: 1fr 1fr 1fr/ 1fr 1fr;
 }
 
-div>.one_bead {
+div>.bead_1 {
     margin: 69% 20%;
     grid-row: span 3;
     grid-column: span 2;
@@ -67,7 +67,7 @@ div>.one_bead {
     background-repeat: no-repeat;
 }
 
-div>.two_bead {
+div>.bead_2 {
     grid-row: span 3;
     grid-column: span 2;
     background-image: url('../../ludo\ images/Dice Beads/Bead 2.jpg');
@@ -75,10 +75,37 @@ div>.two_bead {
     background-repeat: no-repeat;
 }
 
-div>.three_bead {
+div>.bead_3 {
     grid-row: span 3;
     grid-column: span 2;
     background-image: url('../../ludo\ images/Dice Beads/Bead 3.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+div>.bead_4 {
+    grid-row: span 3;
+    grid-column: span 2;
+    margin-top: 20%;
+    background-image: url('../../ludo\ images/Dice Beads/Bead 4.jpg');
+    background-size: 100% 90%;
+    background-repeat: no-repeat;
+}
+
+div>.bead_5 {
+    grid-row: span 3;
+    grid-column: span 2;
+    background-image: url('../../ludo\ images/Dice Beads/Bead 5.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+div>.bead_6 {
+    grid-row: span 3;
+    grid-column: span 2;
+    background-image: url('../../ludo\ images/Dice Beads/Bead 6.jpg');
+    margin-bottom: 10%;
+    margin-right: 3%;
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
@@ -98,4 +125,14 @@ button#play
     border-radius: 20%;
     margin-top: 20%;
     font-size: xx-large;
+}
+
+button.play_butt
+{
+    height: 10vh;
+    width: 60%;
+    border-radius: 20%;
+    margin-top: 20%;
+    font-size: xx-large;
+    background-color: rgba(0, 0, 0, 0.553);
 }
