@@ -1,10 +1,12 @@
 body
 {
     background-color: rgba(11, 74, 158, 0.789);
-    background-image: url('../../ludo\ images/traditional ludo image background with Indian touch.png');
+    background-image: url('../../ludo\ images/traditional ludo image background with Indian touch 2.png');
     background-repeat: no-repeat;
     background-size: 100%;
 }
+
+
 
 .interrupt
 {
@@ -18,7 +20,7 @@ body
     height: 95vh;
     width: 98%;
     margin-top: 2vh;
-    grid-template: 1fr 1fr 1fr / 1fr 0.15fr;
+    grid-template: 1fr 1fr 0.9fr / 1fr 0.15fr;
 }
 
 div > #game-ludo
@@ -34,7 +36,7 @@ div > #dicee
     grid-row: span 2;
     background-color: rgb(47, 56, 160);
     border-radius: 50%;
-    margin-top: 1%;
+    margin-top: 10%;
     background-image: url('../../ludo\ images/Dice.png');
     background-size: cover;
     background-position: 40%;
@@ -48,10 +50,10 @@ div > #dicee
 div > .dice-numbers
 {
     background-color: white;
-    height: 48.8%;
-    width: 61%;
-    margin-bottom: 1%;
-    margin-left: 0.9%;
+    height: 48%;
+    width: 60%;
+    margin-bottom: 1.9%;
+    margin-left: 2%;
     display: grid;
     grid-template: 1fr 1fr 1fr/ 1fr 1fr;
 }
@@ -60,18 +62,25 @@ div>.one_bead {
     margin: 69% 20%;
     grid-row: span 3;
     grid-column: span 2;
-    background-image: url('../../ludo\ images/dice2.jpg');
+    background-image: url('../../ludo\ images/Dice Beads/Bead 1.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
 div>.two_bead {
-    margin: 50% 20%;
-    grid-row: span 1;
+    grid-row: span 3;
     grid-column: span 2;
-    background-image: url('../../ludo\ images/dots.png');
+    background-image: url('../../ludo\ images/Dice Beads/Bead 2.jpg');
     background-size: 100% 100%;
-    background-repeat: 2;
+    background-repeat: no-repeat;
+}
+
+div>.three_bead {
+    grid-row: span 3;
+    grid-column: span 2;
+    background-image: url('../../ludo\ images/Dice Beads/Bead 3.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
 div > #play-button
