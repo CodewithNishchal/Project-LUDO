@@ -1,6 +1,6 @@
 body
 {
-    background-image: url('../ludo\ images/traditional ludo image background with Indian touch.png');
+    background-image: url('./ludo\ images/traditional ludo image background with Indian touch.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -37,7 +37,7 @@ a.Player_detail:hover
     font-size: 50px;
     height: 30vh;
     width: 35vh;
-    background-image: url('../ludo\ images/Players/2-players.png');
+    background-image: url('./ludo\ images/Players/2-players.png');
     background-size: 100% 100%;
     font-family: "Atma", system-ui;
     border-radius: 20%;
@@ -48,13 +48,13 @@ a.Player_detail:hover
 }
 
 a.three:hover {
-    background-image: url('../ludo\ images/Players/three.png');
+    background-image: url('./ludo\ images/Players/three.png');
     background-size: 100% 100%;
     /* color: black */
 }
 
 a.four:hover {
-    background-image: url('../ludo\ images/Players/four.png');
+    background-image: url('./ludo\ images/Players/four.png');
     background-size: 100% 100%;
     color: rgb(0, 255, 47);
 }

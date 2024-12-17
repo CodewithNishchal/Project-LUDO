@@ -1,19 +1,24 @@
 body
 {
     background-color: rgba(11, 74, 158, 0.789);
-    background-image: url('/ludo\ images/traditional ludo image background with Indian touch.png');
+    background-image: url('../../ludo\ images/traditional ludo image background with Indian touch.png');
     background-repeat: no-repeat;
     background-size: 100%;
 }
 
+.interrupt
+{
+    display: none;
+}
+
 #main-box
 {
+    /* filter: blur(0px); */
     display: grid;
     height: 95vh;
     width: 98%;
     margin-top: 2vh;
     grid-template: 1fr 1fr 1fr / 1fr 0.15fr;
-    /* display: none; */
 }
 
 div > #game-ludo
@@ -30,17 +35,44 @@ div > #dicee
     background-color: rgb(47, 56, 160);
     border-radius: 50%;
     margin-top: 1%;
-    background-image: url('/ludo\ images/Dice.png');
+    background-image: url('../../ludo\ images/Dice.png');
     background-size: cover;
     background-position: 40%;
     border: solid black;
     border-width: 0.5vh;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
 }
 
-/* div > #dice-rotate
+div > .dice-numbers
 {
-    
-} */
+    background-color: white;
+    height: 48.8%;
+    width: 61%;
+    margin-bottom: 1%;
+    margin-left: 0.9%;
+    display: grid;
+    grid-template: 1fr 1fr 1fr/ 1fr 1fr;
+}
+
+div>.one_bead {
+    margin: 69% 20%;
+    grid-row: span 3;
+    grid-column: span 2;
+    background-image: url('../../ludo\ images/dice2.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+div>.two_bead {
+    margin: 50% 20%;
+    grid-row: span 1;
+    grid-column: span 2;
+    background-image: url('../../ludo\ images/dots.png');
+    background-size: 100% 100%;
+    background-repeat: 2;
+}
 
 div > #play-button
 {
