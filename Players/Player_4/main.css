@@ -15,9 +15,9 @@ body
 {
     /* filter: blur(0px); */
     display: grid;
-    height: 97vh;
+    height: 95vh;
     width: 98%;
-    margin-top: 0.5vh;
+    margin-top: 2vh;
     grid-template: 1fr 1fr 0.9fr / 1fr 0.15fr;
 }
 
@@ -137,92 +137,6 @@ button#play:hover
 div>#game-ludo {
     grid-row: span 3;
     background-color: whitesmoke;
-    /* background-image: url('../../ludo\ images/back-satge.png');
-    background-repeat: no-repeat;
-    background-size: 100% 100%; */
     border-radius: 15%;
     margin: 1%;
-    display: grid;
-    grid-template: 1fr 0.7fr 1fr / 1fr 0.7fr 1fr;
-}
-
-div.base
-{
-    /* display: flex; */
-    background-color: rgba(255, 255, 255, 0.666);
-}
-
-div.B_blue
-{
-    border-top-left-radius: 40%;
-}
-div.B_red
-{
-    border-top-right-radius: 40%;
-}
-div.B_green
-{
-    border-bottom-left-radius: 40%;
-}
-div.B_yellow
-{
-    border-bottom-right-radius: 40%;
-}
-
-div.grid-v
-{
-    display: grid;
-    grid-template: repeat(5,1fr) / repeat(3,1fr);
-    gap: 3%;
-    margin-top: 1%;
-    padding: 2%;
-}
-
-div.g-v-up
-{
-    border: solid black;
-    border-radius: 50%;
-}
-
-div.v-safe
-{
-    grid-row: span 4;
-    border-radius: 5%;
-    display: grid;
-    grid-template: repeat(4,1fr)/1fr;
-    gap: 2%;
-    padding: 5%;
-}
-
-div.v-safe-r
-{
-    border: solid black;
-    border-radius: 50%;
-}
-
-div.grid-h {
-    display: grid;
-    grid-template: repeat(3, 1fr) / repeat(5, 1fr);
-    gap: 3%;
-    margin-top: 1%;
-    padding: 2%;
-}
-
-div.g-h-left {
-    border: solid black;
-    border-radius: 50%;
-}
-
-div.h-safe {
-    grid-column: span 4;
-    border-radius: 5%;
-    display: grid;
-    grid-template: 1fr/repeat(4, 1fr);
-    gap:5%;
-    padding: 0.5% 2%;
-}
-
-div.h-safe-b {
-    border: solid black;
-    border-radius: 50%;
 }
