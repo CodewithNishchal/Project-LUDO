@@ -15,11 +15,27 @@
 </head>
 <body>
     <div class="interrupt">
-        Lorem 
-    </div>
+        <div id="interrupt-box">
+            <h2 style="font-size: 300%;">Choose Player 1</h2>
+            <div class="color-pallete">
+                <div class="color-box red" id="red">
+                </div>
+                <div class="color-box blue" id="blue"></div>
+                <div class="color-box green" id="green"></div>
+                <div class="color-box yellow" id="yellow"></div>
+            </div>
+            </div>
+        </div>
     <div id="main-box">
         <div id="game-ludo">
-            <div class="base B_blue"></div>
+            <div class="base B_blue">
+                <div id="B-home">
+                    <div class="B-indexes"><div id="b-1"></div></div>
+                    <div class="B-indexes"><div id="b-2"></div></div>
+                    <div class="B-indexes"><div id="b-3"></div></div>
+                    <div class="B-indexes"><div id="b-4"></div></div>
+                </div>
+            </div>
             <div class="grid-v up">
                 <div class="g-v-up"></div>
                 <div class="g-v-up"></div>
@@ -31,7 +47,7 @@
                     <div class="v-safe-r"></div>
                     <div class="v-safe-r"></div>
                 </div>
-                <div class="g-v-up"></div>
+                <div class="g-v-up start-red"></div>
                 <div class="g-v-up"></div>
                 <div class="g-v-up"></div>
                 <div class="g-v-up"></div>
@@ -39,10 +55,25 @@
                 <div class="g-v-up"></div>
                 <div class="g-v-up"></div>
             </div>
-            <div class="base B_red"></div>
+            <div class="base B_red">
+                <div id="B-home">
+                    <div class="B-indexes">
+                        <div id="b-1"></div>
+                    </div>
+                    <div class="B-indexes">
+                        <div id="b-2"></div>
+                    </div>
+                    <div class="B-indexes">
+                        <div id="b-3"></div>
+                    </div>
+                    <div class="B-indexes">
+                        <div id="b-4"></div>
+                    </div>
+                </div>
+            </div>
             <div class="grid-h left">
                 <div class="g-h-left"></div>
-                <div class="g-h-left"></div>
+                <div class="g-h-left start-blue"></div>
                 <div class="g-h-left"></div>
                 <div class="g-h-left"></div>
                 <div class="g-h-left"></div>
@@ -59,47 +90,79 @@
                 <div class="g-h-left"></div>
                 <div class="g-h-left"></div>
             </div>
-            <div class=""></div>
+            <div class="Center">
+                <div class="center-grid"></div>
+            </div>
             <div class="grid-h right">
-                <div class="g-h-left"></div>
-                <div class="g-h-left"></div>
-                <div class="g-h-left"></div>
-                <div class="g-h-left"></div>
-                <div class="g-h-left"></div>
-                <div class="g-h-left"></div>
-                <div class="g-h-left h-safe">
-                    <div class="h-safe-b"></div>
-                    <div class="h-safe-b"></div>
-                    <div class="h-safe-b"></div>
-                    <div class="h-safe-b"></div>
+                <div class="g-h-right"></div>
+                <div class="g-h-right"></div>
+                <div class="g-h-right"></div>
+                <div class="g-h-right"></div>
+                <div class="g-h-right"></div>
+                <div class="g-h-right h-safe">
+                    <div class="h-safe-y"></div>
+                    <div class="h-safe-y"></div>
+                    <div class="h-safe-y"></div>
+                    <div class="h-safe-y"></div>
                 </div>
-                <div class="g-h-left"></div>
-                <div class="g-h-left"></div>
-                <div class="g-h-left"></div>
-                <div class="g-h-left"></div>
-                <div class="g-h-left"></div>
+                <div class="g-h-right"></div>
+                <div class="g-h-right"></div>
+                <div class="g-h-right"></div>
+                <div class="g-h-right"></div>
+                <div class="g-h-right start-yellow"></div>
+                <div class="g-h-right"></div>
             </div>
-            <div class="base B_green"></div>
+            <div class="base B_green">
+                <div id="B-home">
+                    <div class="B-indexes">
+                        <div id="b-1"></div>
+                    </div>
+                    <div class="B-indexes">
+                        <div id="b-2"></div>
+                    </div>
+                    <div class="B-indexes">
+                        <div id="b-3"></div>
+                    </div>
+                    <div class="B-indexes">
+                        <div id="b-4"></div>
+                    </div>
+                </div>
+            </div>
             <div class="grid-v down">
-                <div class="g-v-up"></div>
-                <div class="g-v-up"></div>
-                <div class="g-v-up"></div>
-                <div class="g-v-up"></div>
-                <div class="g-v-up v-safe">
-                    <div class="v-safe-r"></div>
-                    <div class="v-safe-r"></div>
-                    <div class="v-safe-r"></div>
-                    <div class="v-safe-r"></div>
+                <div class="g-v-down"></div>
+                <div class="g-v-down v-safe">
+                    <div class="v-safe-g"></div>
+                    <div class="v-safe-g"></div>
+                    <div class="v-safe-g"></div>
+                    <div class="v-safe-g"></div>
                 </div>
-                <div class="g-v-up"></div>
-                <div class="g-v-up"></div>
-                <div class="g-v-up"></div>
-                <div class="g-v-up"></div>
-                <div class="g-v-up"></div>
-                <div class="g-v-up"></div>
-                <div class="g-v-up"></div>
+                <div class="g-v-down"></div>
+                <div class="g-v-down"></div>
+                <div class="g-v-down"></div>
+                <div class="g-v-down"></div>
+                <div class="g-v-down"></div>
+                <div class="g-v-down start-green"></div>
+                <div class="g-v-down"></div>
+                <div class="g-v-down"></div>
+                <div class="g-v-down"></div>
+                <div class="g-v-down"></div>
             </div>
-            <div class="base B_yellow"></div>
+            <div class="base B_yellow">
+                <div id="B-home">
+                    <div class="B-indexes">
+                        <div id="b-1"></div>
+                    </div>
+                    <div class="B-indexes">
+                        <div id="b-2"></div>
+                    </div>
+                    <div class="B-indexes">
+                        <div id="b-3"></div>
+                    </div>
+                    <div class="B-indexes">
+                        <div id="b-4"></div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div id="dicee">
             <div class="dice-numbers">
@@ -107,7 +170,7 @@
             </div>
         </div>
         <div id="play-button">
-            <button onclick="rotateDice()" id="play">Roll!</button>
+            <button  id="play">Roll!</button>
         </div>
     </div>
 

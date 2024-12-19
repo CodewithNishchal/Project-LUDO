@@ -1,14 +1,86 @@
 body
 {
-    background-color: rgba(11, 74, 158, 0.789);
-    background-image: url('../../ludo\ images/traditional ludo image background with Indian touch 2.png');
+    height: 100vh;
+    background-image: url('../../ludo\ images/Background/traditional ludo image background with Indian touch 2.png');  
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100% 100%;
 }
 
 .interrupt
 {
-    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.576);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    /* display: none; */
+}
+
+div#interrupt-box
+{
+    height: 50%;
+    width: 50%;
+    background: rgb(212, 221, 168);
+    background: linear-gradient(90deg, rgba(212, 221, 168, 1) 0%, rgba(228, 155, 36, 1) 100%);
+    border-radius: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.color-pallete
+{
+    height: 50%; 
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.678);
+    border-radius: 10%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.color-pallete > .color-box
+{
+    height: 80%;
+    width: 20%;
+    border-radius: 20%;
+    border: solid white;
+    margin-top: 2.4%;
+}
+
+.color-pallete>.red
+{
+    background-image: url('../../ludo\ images/Player Beads/red bead.png');
+    background-size: 100% 100%;
+}
+
+.color-pallete>.blue
+{
+    background-image: url('../../ludo\ images/Player Beads/blue bead.png');
+    background-size: 100% 100%;
+}
+
+.color-pallete>.green
+{
+    background-image: url('../../ludo\ images/Player Beads/green bead.png');
+    background-size: 100% 100%;
+}
+
+.color-pallete>.yellow
+{
+    background-image: url('../../ludo\ images/Player Beads/yellow bead.png');
+    background-size: 100% 100%;
+}
+
+.pressed {
+    box-shadow: 0 3px 4px 0 #DBEDF3;
+    opacity: 0.2;
 }
 
 #main-box
@@ -18,7 +90,7 @@ body
     height: 97vh;
     width: 98%;
     margin-top: 0.5vh;
-    grid-template: 1fr 1fr 0.9fr / 1fr 0.15fr;
+    grid-template: 1fr 1fr 0.9fr / 1fr 0.2fr;
 }
 
 div > #dicee
@@ -28,8 +100,9 @@ div > #dicee
     border-radius: 50%;
     margin-top: 10%;
     background-image: url('../../ludo\ images/Dice.png');
-    background-size: cover;
-    background-position: 40%;
+    background-size: 130% 110%;
+    background-repeat: no-repeat; 
+    background-position: center;
     border: solid black;
     border-width: 0.5vh;
     display: flex;
@@ -39,13 +112,18 @@ div > #dicee
 
 div > .dice-numbers
 {
-    background-color: white;
-    height: 48%;
-    width: 60%;
-    margin-bottom: 1.9%;
+    background-color: transparent;
+    /* height: 48.2%;
+    width: 47%;
+    margin-bottom: 1.43%;
+    margin-left: 9%; */
+    height: 50%;
+    width: 50%;
+    margin-top: 14%;
     margin-left: 2%;
     display: grid;
     grid-template: 1fr 1fr 1fr/ 1fr 1fr;
+    
 }
 
 div>.bead_1 {
@@ -84,6 +162,7 @@ div>.bead_4 {
 
 div>.bead_5 {
     grid-row: span 3;
+    margin-top: 10%;
     grid-column: span 2;
     background-image: url('../../ludo\ images/Dice Beads/Bead 5.jpg');
     background-size: 100% 100%;
@@ -106,6 +185,7 @@ div > #play-button
     display: flex;
     /* align-items: center; */
     justify-content: center;
+    visibility: hidden;
 }
 
 button#play
@@ -141,7 +221,10 @@ div>#game-ludo {
     background-repeat: no-repeat;
     background-size: 100% 100%; */
     border-radius: 15%;
+    border: solid rgb(209, 101, 13) 1vh;
     margin: 1%;
+    margin-right: 8%;
+    margin-left: 2%;
     display: grid;
     grid-template: 1fr 0.7fr 1fr / 1fr 0.7fr 1fr;
 }
@@ -150,32 +233,121 @@ div.base
 {
     /* display: flex; */
     background-color: rgba(255, 255, 255, 0.666);
+    /* border-top-left-radius: 40%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* div.B_blue
+{
+    
+} */
+
+div#B-home
+{
+    height: 90%;
+    width: 80%;
+    border-radius: 50%;
+    border: solid black;
+    display: grid;
+    row-gap: 4%;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+}
+
+div.B-indexes
+{
+    display: flex;
+    justify-content: center;
+    /* border: solid black; */
+}
+
+div#b-1
+{
+    height: 60%;
+    width: 60%;
+    margin-bottom: 1%;
+    margin-left: 17%;
+    border: solid black;
+    border-radius: 50%;
+    align-self: flex-end;
+}
+
+div.b-1-red
+{
+    background-image: url('../../ludo\ images/red bead.png');
+    background-size: 100% 100%;
+}
+
+div#b-2
+{
+    height: 60%;
+    width: 60%;
+    margin-bottom: 1%;
+    margin-right: 17%;
+    border: solid black;
+    border-radius: 50%;
+    align-self: flex-end;
+}
+
+div#b-3
+{
+    height: 60%;
+    width: 60%;
+    margin-top: 1%;
+    margin-left: 17%;
+    border: solid black;
+    border-radius: 50%;
+    align-self: flex-start;
+}
+
+div#b-4
+{
+    height: 60%;
+    width: 60%;
+    margin-top: 1%;
+    margin-right: 17%;
+    border: solid black;
+    border-radius: 50%;
+    align-self: flex-start;
 }
 
 div.B_blue
 {
     border-top-left-radius: 40%;
+    border-bottom-right-radius: 40%;
 }
 div.B_red
 {
     border-top-right-radius: 40%;
+    border-bottom-left-radius: 40%;
 }
+
 div.B_green
 {
     border-bottom-left-radius: 40%;
+    border-top-right-radius: 40%;
 }
 div.B_yellow
 {
     border-bottom-right-radius: 40%;
+    border-top-left-radius: 40%;
 }
 
 div.grid-v
 {
     display: grid;
     grid-template: repeat(5,1fr) / repeat(3,1fr);
-    gap: 3%;
-    margin-top: 1%;
-    padding: 2%;
+    row-gap: 3%;
+    column-gap: 6%;
+    margin-top: 3%;
+    padding: 1% 6%;
+}
+
+div.grid-v.down
+{
+    margin-top: 0%;
+    margin-bottom: 3%;
 }
 
 div.g-v-up
@@ -184,18 +356,27 @@ div.g-v-up
     border-radius: 50%;
 }
 
-div.v-safe
+div.v-safe-r
 {
+    border: solid black;
+    border-radius: 50%;
+}
+
+div.g-v-down {
+    border: solid black;
+    border-radius: 50%;
+}
+
+div.v-safe {
     grid-row: span 4;
     border-radius: 5%;
     display: grid;
-    grid-template: repeat(4,1fr)/1fr;
+    grid-template: repeat(4, 1fr)/1fr;
     gap: 2%;
     padding: 5%;
 }
 
-div.v-safe-r
-{
+div.v-safe-g {
     border: solid black;
     border-radius: 50%;
 }
@@ -213,6 +394,16 @@ div.g-h-left {
     border-radius: 50%;
 }
 
+div.h-safe-b {
+    border: solid black;
+    border-radius: 50%;
+}
+
+div.g-h-right {
+    border: solid black;
+    border-radius: 50%;
+}
+
 div.h-safe {
     grid-column: span 4;
     border-radius: 5%;
@@ -222,7 +413,50 @@ div.h-safe {
     padding: 0.5% 2%;
 }
 
-div.h-safe-b {
+div.h-safe-y {
     border: solid black;
     border-radius: 50%;
+}
+
+div.start-red
+{
+    background-image: url('../../ludo\ images/Start Arrows/arrow-down.png');
+    background-size: 100% 150% ;
+    background-position: 40% 55%;
+    background-repeat: no-repeat;
+}
+
+div.start-blue
+{
+    background-image: url('../../ludo\ images/Start Arrows/arrow-blue.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+div.start-green
+{
+    background-image: url('../../ludo\ images/Start Arrows/green-arrow.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+div.start-yellow
+{
+    background-image: url('../../ludo\ images/Start Arrows/arrow-yellow.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.Center
+{
+    background-image: url('../../ludo\ images/center.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border: solid black;
+    /* height: 150%;
+    width: 90%; */
+    border-radius: 50%;
+    display: grid;
+    grid-template: repeat(2,1fr)/repeat(2,1fr);
+    /* rotate: 90deg; */
 }
