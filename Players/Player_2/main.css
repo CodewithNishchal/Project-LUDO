@@ -98,7 +98,7 @@ div.color-pallete
     height: 97vh;
     width: 98%;
     margin-top: 0.5vh;
-    grid-template: 1fr 1fr 0.9fr / 1fr 0.2fr;
+    grid-template: 1fr 1fr 0.9fr / 1fr 0.23fr;
 }
 
 
@@ -233,16 +233,16 @@ button#play:hover
 div>#game-ludo {
     grid-row: span 3;
     background-color: whitesmoke;
-    /* background-image: url('../../ludo\ images/back.jpg');
+    background-image: url('../../ludo\ images/back.jpg');
     background-repeat: no-repeat;
-    background-size: 100% 100%; */
+    background-size: 100% 100%;
     border-radius: 15%;
     border: solid rgb(209, 101, 13) 1vh;
     margin: 1%;
-    margin-right: 8%;
+    margin-right: 6%;
     margin-left: 2%;
     display: grid;
-    grid-template: 1fr 0.7fr 1fr / 1fr 0.7fr 1fr;
+    grid-template: 1fr 0.6fr 1fr / 1fr 0.7fr 1fr;
 }
 
 div.base
@@ -293,6 +293,7 @@ div.b-1-red
 {
     background-image: url('../../ludo\ images/red bead.png');
     background-size: 100% 100%;
+    z-index: 1;
 }
 
 div#b-2
@@ -330,107 +331,160 @@ div#b-4
 
 div.base_blue
 {
-    border-top-left-radius: 40%;
-    border-bottom-right-radius: 40%;
+    background-image: url('../../ludo\ images/Home-Backgrounds/blue-back.png');
+        background-size: 100% 100%;
+    border-top-left-radius: 37%;
+    border-bottom-right-radius: 37%;
 }
 div.base_red
 {
-    border-top-right-radius: 40%;
-    border-bottom-left-radius: 40%;
+    background-image: url('../../ludo\ images/Home-Backgrounds/red-back.png');
+    background-size: 100% 100%;
+    border-top-right-radius: 37%;
+    border-bottom-left-radius: 37%;
 }
 
 div.base_green
 {
-    border-bottom-left-radius: 40%;
-    border-top-right-radius: 40%;
+    background-image: url('../../ludo\ images/Home-Backgrounds/green-back.png');
+    background-size: 100% 100%;
+    border-bottom-left-radius: 37%;
+    border-top-right-radius: 37%;
 }
 div.base_yellow
 {
-    border-bottom-right-radius: 40%;
-    border-top-left-radius: 40%;
+    background-image: url('../../ludo\ images/Home-Backgrounds/yellow-back.png');
+    background-size: 100% 100%;
+    border-bottom-right-radius: 37%;
+    border-top-left-radius: 37%;
 }
 
+div.B_red
+{
+    background-color: rgba(193, 13, 13, 0.723);
+}
+
+div.B_blue
+{
+    background-color: rgba(11, 107, 198, 0.723);
+}
+
+div.B_yellow
+{
+    background-color: rgba(217, 138, 27, 0.723);
+}
+
+div.B_green
+{
+    background-color: rgba(0, 128, 0, 0.723);
+}
+
+
+/* Vertical path CSS */
 div.grid-v
 {
     display: grid;
-    grid-template: repeat(5,1fr) / repeat(3,1fr);
-    row-gap: 3%;
-    column-gap: 6%;
-    margin-top: 3%;
-    padding: 1% 6%;
+    grid-template: repeat(6,1fr) / repeat(3,1fr);
+    row-gap: 1.5%;
+    column-gap: 9%;
+    margin-top: 1.5%;
+    margin-bottom: 1%;
+    padding: 0% 8%;
 }
 
 div.grid-v.down
 {
-    margin-top: 0%;
-    margin-bottom: 3%;
+    margin-top: 1%;
+    margin-bottom: 0%;
 }
 
 div.g-v-up
 {
-    border: solid black;
+    border: solid rgb(141, 73, 1) 0.45vh;
     border-radius: 50%;
 }
 
 div.v-safe-r
 {
-    border: solid black;
+    border: solid rgb(117, 0, 0);
     border-radius: 50%;
 }
 
 div.g-v-down {
-    border: solid black;
+    border: solid rgb(141, 73, 1) 0.45vh;
     border-radius: 50%;
 }
 
 div.v-safe {
-    grid-row: span 4;
-    border-radius: 5%;
+    border: solid black;
+    grid-row: span 5;
+    border-radius: 10%;
     display: grid;
-    grid-template: repeat(4, 1fr)/1fr;
+    grid-template: repeat(5, 1fr)/1fr;
     gap: 2%;
     padding: 5%;
 }
 
+div.red-safe {
+    border: solid rgb(117, 0, 0);
+    background-color: rgba(193, 13, 13, 0.431);
+}   
+
 div.v-safe-g {
-    border: solid black;
+    border: solid rgb(1, 74, 1);
     border-radius: 50%;
+}
+
+div.green-safe {
+    border: solid rgb(1, 74, 1);
+    background-color: rgba(0, 128, 0, 0.431);
 }
 
 div.grid-h {
     display: grid;
-    grid-template: repeat(3, 1fr) / repeat(5, 1fr);
+    grid-template: repeat(3, 1fr) / repeat(6, 1fr);
     gap: 3%;
+    row-gap: 5%;
     margin-top: 1%;
     padding: 2%;
 }
 
 div.g-h-left {
-    border: solid black;
+    border: solid rgb(141, 73, 1) 0.45vh;
     border-radius: 50%;
 }
 
+div.blue-safe {
+    border: solid rgb(3, 42, 79);
+    background-color: rgba(11, 107, 198, 0.723);
+}
+
 div.h-safe-b {
-    border: solid black;
+    border: solid rgb(3, 42, 79);
     border-radius: 50%;
 }
 
 div.g-h-right {
-    border: solid black;
+    border: solid rgb(141, 73, 1) 0.45vh;
     border-radius: 50%;
 }
 
 div.h-safe {
-    grid-column: span 4;
-    border-radius: 5%;
+    grid-column: span 5;
+    border-radius: 10%;
     display: grid;
-    grid-template: 1fr/repeat(4, 1fr);
+    grid-template: 1fr/repeat(5, 1fr);
     gap:5%;
     padding: 0.5% 2%;
 }
 
+div.yellow-safe {
+    border: solid rgb(117, 75, 1);
+    background-color: rgba(217, 138, 27, 0.723);
+}
+
 div.h-safe-y {
-    border: solid black;
+    border: solid rgba(121, 78, 3, 0.982);
     border-radius: 50%;
 }
 
@@ -440,6 +494,7 @@ div.h-safe-y {
     background-size: 100% 150% ;
     background-position: 40% 55%;
     background-repeat: no-repeat;
+    background-color: rgba(193, 13, 13, 0.431);
 }
 
 .start-blue
@@ -447,6 +502,7 @@ div.h-safe-y {
     background-image: url('../../ludo\ images/Start Arrows/arrow-blue.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    background-color: rgba(11, 108, 198, 0.431);
 }
 
 .start-green
@@ -461,6 +517,7 @@ div.h-safe-y {
     background-image: url('../../ludo\ images/Start Arrows/arrow-yellow.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    background-color: rgba(217, 138, 27, 0.723);
 }
 
 
