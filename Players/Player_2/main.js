@@ -1,9 +1,11 @@
 let dice_beads = document.querySelector('.dice-numbers>div').classList;
-var play = document.querySelector("button#play");
+var play = document.querySelector("button.dice_roll");
+var test = document.querySelector("#play-button");
 var main_box = document.querySelector("#main-box");
 var interrupt = document.querySelector(".interrupt");
 var player = document.querySelectorAll(".color-pallete > .color-box");
 let colors = ['red', 'blue', 'green', 'yellow'];
+var Player_winning = [0, 0, 0, 0];
 var player1 = null;
 let player1_point = [0,0,0,0];
 var player2 = null;
@@ -13,9 +15,11 @@ var Player_turn = -1;
 var count_of_six = 0;
 var prev_value = 0;
 var random = 0;
+var base_validate = 0;
 
 setTimeout(function () {
     interrupt.style.visibility = "visible";
+    interrupt.classList.add('make_it_appear');
 }, 1000);
 
 
@@ -39,9 +43,12 @@ for (let i = 0; i < player.length; i++) {
             player2 = this.id;
             setTimeout(function () {
                 main_box.style.display = "grid";
-                interrupt.style.visibility = "hidden";
+                interrupt.classList.add('make_it_disappear');
                 setTimeout(function () {
-                    play.style.visibility = "visible";
+                    interrupt.style.display = "none";
+                    test.style.display = "flex"
+                    play.setAttribute('id', 'play');
+                    test.classList.add('make_it_appear');
                 }, 1000);
             }, 1000);
         }
@@ -67,8 +74,10 @@ function start_base() {
                     {
                         if(base1[i].classList.contains(player1 + '-' + '0' + (i + 1)))
                             {
+                                setTimeout(function () {
                                 base1[i].classList.remove(player1 + '-' + '0' + (i + 1));
                                 document.querySelector("div.area > ." + player1 + '-1').classList.add(player1 + '-' + '0' + (i + 1));
+                                }, 200);
                                 player1_point[i] = 1;
                                 Dice_value = 0;
                             }
@@ -86,8 +95,10 @@ function start_base() {
                     {
                         if(base2[i].classList.contains(player2 + '-' + '0' + (i + 1)))
                         {
-                            base2[i].classList.remove(player2 + '-' + '0' + (i + 1));
-                            document.querySelector("div.area > ." + player2 + '-1').classList.add(player2 + '-' + '0' + (i + 1));
+                            setTimeout(function () {
+                                base2[i].classList.remove(player2 + '-' + '0' + (i + 1));
+                                document.querySelector("div.area > ." + player2 + '-1').classList.add(player2 + '-' + '0' + (i + 1));
+                            }, 200);
                             player2_point[i] = 1;
                             Dice_value = 0;
                         }
@@ -219,59 +230,74 @@ function start_base() {
         // Check Winner Logic
         function checkWinner(player_chosen)
         {
-            var base = document.querySelectorAll('div.B_' + player_chosen + '> div.B-indexes > div');
-            var flag = 0;
-            for(let i = 1; i <= 4; i++)
-            {
-                if ((base[i-1].classList.contains(player_chosen + '-' + '0' + i)))
-                {
-                    flag = 1;
-                }
-            }
-            if (flag === 0)
+            if (player_chosen === 4)
             {
                 alert("Player 1 Wins");
+                location.reload();
             }
         }
 
         // Move Bead Logic
         function moveBead(playerNo, i, pointer, player_point, playerName)
         {
-            var topCheck = document.querySelector('div.area >.' + playerName + '-' + player_point[playerNo]);
-            player_point[playerNo] += Dice_value;
-
-            if (player_point[playerNo] < 52)
-            {
-                pointer[i].classList.remove(playerName + '-0' + (playerNo + 1));
-                if (!topCheck.classList.contains("start-it"))
-                    beadOnTop(playerName,topCheck);
-                topCheck.classList.add(playerName + '-0' + (playerNo + 1));
-                Dice_value = 0;
-            }
+            var topCheck = document.querySelector('div.area >.' + playerName + '-' + (player_point[playerNo] + Dice_value));
+            var initial_distance = player_point[playerNo];
             
-            else if (player_point[playerNo] < 57)
+            if (Dice_value !== 0)
             {
-                var safe_house = document.querySelectorAll("div." + playerName + "-safe > div"); 
-                var final_destination = player_point[playerNo] - 52;
-                pointer[i].classList.remove(playerName + '-0' + (playerNo + 1));
-                safe_house[final_destination].classList.add(playerName + '-0' + (playerNo + 1));
-                Dice_value = 0;
-            }
-            else if (player_point[playerNo] === 57)
-            {                                    
-                pointer[i].classList.remove(playerName + '-0' + (playerNo + 1));
-                checkWinner(playerName);
-            }
+                player_point[playerNo] += Dice_value;
 
+                if (player_point[playerNo] < 52) {
+
+                    //check for bead on top 
+                    if (!topCheck.classList.contains("start-it"))
+                        beadOnTop(playerName, topCheck);
+
+                    //Show Bead motion
+                    document.querySelector('div.area >.' + playerName + '-' + initial_distance).classList.remove(playerName + '-' + '0' + (playerNo + 1));
+                    document.querySelector('div.area >.' + playerName + '-' + (initial_distance + 1)).classList.add(playerName + '-' + '0' + (playerNo + 1));
+                    initial_distance++;
+                    bead_motion(initial_distance, player_point[playerNo], playerName, playerNo);
+
+                    //make dice value 0
+                    Dice_value = 0;
+                }
+                
+                else if (player_point[playerNo] < 57) {
+
+                    //Base motion
+                    console.log(player_point[playerNo]);
+                    document.querySelector('div.game-area.' + playerName + '-' + initial_distance).classList.remove(playerName + '-' + '0' + (playerNo + 1));
+                    document.querySelector('div.game-area.' + playerName + '-' + (initial_distance + 1)).classList.add(playerName + '-' + '0' + (playerNo + 1));
+                    initial_distance++;
+                    bead_motion(initial_distance, player_point[playerNo], playerName, playerNo);
+
+
+                    //make dice value 0
+                    Dice_value = 0;
+                }
+                    
+                else if (player_point[playerNo] === 57) {
+                    Dice_value = 0;
+                    pointer[i].classList.remove(playerName + '-0' + (playerNo + 1));
+                    Player_winning[playerNo]++;
+                    checkWinner(Player_winning[playerNo]);
+                }
+            }
         }
 
 
         //Check for overlapping of beads Logic
         function beadOnTop(playerName, topCheck)
         {
-            for(let i = 1; i <= 4; i++)
+            var skip = colors.indexOf(playerName);
+            console.log(skip); 
+            for (let i = 1; i <= 4; i++)
                 for (let j = 0; j < colors.length; j++)
                 {
+                    if (j === skip)
+                        continue;
+
                     if (topCheck.classList.contains(colors[j] + '-0' + i))
                     {
                         topCheck.classList.remove(colors[j] + '-0' + i);
@@ -286,7 +312,24 @@ function start_base() {
         
     }
 
+    
+        //Bead as well as Base motion over iteration logic
+        function bead_motion(initial_distance, final_distance,playerName,playerNo)
+        {
+            if (initial_distance >= final_distance)
+                return;
 
+            else if(initial_distance < final_distance) {
+                setTimeout(function () {
+                        document.querySelector('div.game-area.' + playerName + '-' + initial_distance).classList.remove(playerName + '-' + '0' + (playerNo + 1));
+                        document.querySelector('div.game-area.' + playerName + '-' + (initial_distance + 1)).classList.add(playerName + '-' + '0' + (playerNo + 1));
+                        initial_distance++;
+                        bead_motion(initial_distance, final_distance, playerName, playerNo);
+                }, 500);
+            }
+        }
+
+        
 
 
 // Dice rotation logic

@@ -28,7 +28,7 @@ a.Player_detail
     color: rgb(121, 28, 104);
     font-size: 50px;
     font-weight: 500;
-    transition: height 0.5s, width 0.5s, background-image 0.5s, color 0.5s, font-size 0.5s, font-family 0.5s;
+    transition: height 0.5s, width 0.5s, background-image 0.5s ease-in-out, color 0.5s, font-size 0.5s, font-family 0.5s;
     font-family: "Atma", system-ui;
 }
 

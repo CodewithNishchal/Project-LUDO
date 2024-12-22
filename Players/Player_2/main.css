@@ -19,8 +19,11 @@ body
     z-index: 999;
     display: flex;
     justify-content: center;
-    align-items: center;
     visibility: hidden;
+    align-items: center;
+    /* animation-name: appear;
+    animation-duration: 1s;
+    animation-delay: 0.5s; */
 }
 
 div#interrupt-box
@@ -29,7 +32,7 @@ div#interrupt-box
     width: 50%;
     background: rgb(212, 221, 168);
     background: linear-gradient(90deg, rgba(212, 221, 168, 1) 0%, rgba(228, 155, 36, 1) 100%);
-    border-radius: 10%;
+    border-radius: 15%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -57,26 +60,75 @@ div.color-pallete
 
 .color-pallete>.red
 {
-    background-image: url('../../ludo\ images/Player Beads/red bead.png');
-    background-size: 100% 100%;
+    background-image: url('../../ludo\ images/Player Beads/red bead.png'), none;
+    background-size: 100% 100%,100% 100%;
+    background-repeat: no-repeat,no-repeat;
+    background-position: center,center;
+    transition: background-size 0.5s ease-in-out, background-image 0.5s ease-in-out;
 }
+
+.color-pallete>.red:hover
+{
+    background-image:  url('../../ludo\ images/Player Beads/red bead.png'), url('../../ludo\ images/Home-Backgrounds/red-back.png');
+    background-size: 50% 50%, 100% 100%;
+    /* background-blend-mode: screen; */
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+}
+
 
 .color-pallete>.blue
 {
-    background-image: url('../../ludo\ images/Player Beads/blue bead.png');
-    background-size: 100% 100%;
+    background-image: url('../../ludo\ images/Player Beads/blue bead.png'), none;
+    background-size: 100% 100%, 100% 100%;
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    transition: background-size 0.5s ease-in-out, background-image 0.5s ease-in-out, background-blen-mode 0.5s ease-in-out;
+}
+
+.color-pallete>.blue:hover
+{
+    background-image: url('../../ludo\ images/Player Beads/blue bead.png'), url('../../ludo\ images/Home-Backgrounds/blue-back.png');
+    background-size: 50% 50%, 100% 100%;
+    /* background-blend-mode: screen; */
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
 }
 
 .color-pallete>.green
 {
-    background-image: url('../../ludo\ images/Player Beads/green bead.png');
-    background-size: 100% 100%;
+    background-image: url('../../ludo\ images/Player Beads/green bead.png'), none;
+    background-size: 100% 91%, 100% 100%;
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    transition: background-size 0.5s ease-in-out, background-image 0.5s ease-in-out, background-blen-mode 0.5s ease-in-out;
+}
+
+.color-pallete>.green:hover
+{
+    background-image: url('../../ludo\ images/Player Beads/green bead.png'), url('../../ludo\ images/Home-Backgrounds/green-back.png');
+    background-size: 50% 50%, 100% 100%;
+    /* background-blend-mode: screen; */
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
 }
 
 .color-pallete>.yellow
 {
-    background-image: url('../../ludo\ images/Player Beads/yellow bead.png');
-    background-size: 100% 100%;
+    background-image: url('../../ludo\ images/Player Beads/yellow bead.png'),none;
+    background-size: 100% 100%, 100% 100%;
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    transition: background-size 0.5s ease-in-out, background-image 0.5s ease-in-out, background-blen-mode 0.5s ease-in-out;
+}
+
+.color-pallete>.yellow:hover
+{
+    background-image: url('../../ludo\ images/Player Beads/yellow bead.png'), url('../../ludo\ images/Home-Backgrounds/yellow-back.png');
+    background-size: 50% 50%, 100% 100%;
+    /* background-blend-mode: screen; */
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
 }
 
 .pressed {
@@ -118,6 +170,8 @@ div > #dicee
     display: flex;
     align-items: center; 
     justify-content: center;
+    animation-name: appear;
+    animation-duration: 1s;
 }
 
 div > .dice-numbers
@@ -197,7 +251,7 @@ div > #play-button
     display: flex;
     /* align-items: center; */
     justify-content: center;
-    visibility: hidden;
+    display: none;
 }
 
 button#play
@@ -495,6 +549,8 @@ div.h-safe-y {
     background-position: 40% 55%;
     background-repeat: no-repeat;
     background-color: rgba(193, 13, 13, 0.431);
+    animation-name: appear;
+    animation-duration: 1s;
 }
 
 .start-blue
@@ -503,6 +559,8 @@ div.h-safe-y {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-color: rgba(11, 108, 198, 0.431);
+    animation-name: appear;
+    animation-duration: 1s;
 }
 
 .start-green
@@ -510,6 +568,9 @@ div.h-safe-y {
     background-image: url('../../ludo\ images/Start Arrows/green-arrow.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    background-color: rgba(0, 128, 0, 0.723);
+    animation-name: appear;
+    animation-duration: 1s
 }
 
 .start-yellow
@@ -518,7 +579,17 @@ div.h-safe-y {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-color: rgba(217, 138, 27, 0.723);
+    animation-name: appear;
+    animation-duration: 1s;
 }
+
+
+
+
+
+
+
+
 
 
 /* Beads motion CSS */
@@ -526,96 +597,128 @@ div.red-01
 {
     background-image: url('../../ludo\ images/Player Beads/red bead.png');
     background-size: 100% 100%;
+    animation-name: appear;
+    animation-duration: 1s;
 }
 
 div.red-02
 {
     background-image: url('../../ludo\ images/Player Beads/red bead.png');
     background-size: 100% 100%;
+    animation-name: appear;
+    animation-duration: 1s;
 }
 
 div.red-03
 {
     background-image: url('../../ludo\ images/Player Beads/red bead.png');
     background-size: 100% 100%;
+    animation-name: appear;
+    animation-duration: 1s;
 }
 
 div.red-04
 {
     background-image: url('../../ludo\ images/Player Beads/red bead.png');
     background-size: 100% 100%;
+    animation-name: appear;
+    animation-duration: 1s;
 }
 
 div.yellow-01
 {
     background-image: url('../../ludo\ images/Player Beads/yellow bead.png');
     background-size: 100% 100%;
+    animation-name: appear;
+    animation-duration: 1s;
 }
 
 div.yellow-02
 {
     background-image: url('../../ludo\ images/Player Beads/yellow bead.png');
     background-size: 100% 100%;
+    animation-name: appear;
+    animation-duration: 1s;
 }
 
 div.yellow-03
 {
     background-image: url('../../ludo\ images/Player Beads/yellow bead.png');
     background-size: 100% 100%;
+    animation-name: appear;
+    animation-duration: 1s;
 }
 
 div.yellow-04
 {
     background-image: url('../../ludo\ images/Player Beads/yellow bead.png');
     background-size: 100% 100%;
+    animation-name: appear;
+    animation-duration: 1s;
 }
 
 div.green-01
 {
     background-image: url('../../ludo\ images/Player Beads/green bead.png');
     background-size: 100% 100%;
+    animation-name: appear;
+    animation-duration: 1s;
 }
 
 div.green-02
 {
     background-image: url('../../ludo\ images/Player Beads/green bead.png');
     background-size: 100% 100%;
+    animation-name: appear;
+    animation-duration: 1s;
 }
 
 div.green-03
 {
     background-image: url('../../ludo\ images/Player Beads/green bead.png');
     background-size: 100% 100%;
+    animation-name: appear;
+    animation-duration: 1s;
 }
 
 div.green-04
 {
     background-image: url('../../ludo\ images/Player Beads/green bead.png');
     background-size: 100% 100%;
+    animation-name: appear;
+    animation-duration: 1s;
 }
 
 div.blue-01
 {
     background-image: url('../../ludo\ images/Player Beads/blue bead.png');
     background-size: 100% 100%;
+    animation-name: appear;
+    animation-duration: 1s;
 }
 
 div.blue-02
 {
     background-image: url('../../ludo\ images/Player Beads/blue bead.png');
     background-size: 100% 100%;
+    animation-name: appear;
+    animation-duration: 1s;
 }
 
 div.blue-03
 {
     background-image: url('../../ludo\ images/Player Beads/blue bead.png');
     background-size: 100% 100%;
+    animation-name: appear;
+    animation-duration: 1s;
 }
 
 div.blue-04
 {
     background-image: url('../../ludo\ images/Player Beads/blue bead.png');
     background-size: 100% 100%;
+    animation-name: appear;
+    animation-duration: 1s;
 }
 
 
@@ -645,4 +748,28 @@ div.blue-04
     display: grid;
     grid-template: repeat(2,1fr)/repeat(2,1fr);
     /* rotate: 90deg; */
+}
+
+/* Animations CSS */
+.make_it_appear
+{
+    animation-name: appear;
+    animation-duration: 1s;
+}
+
+.make_it_disappear
+{
+    animation-name: disappear;
+    animation-duration: 1s;
+}
+
+@keyframes appear
+{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+@keyframes disappear {
+    0%{opacity: 1;}
+    100%{opacity: 0;}
 }
