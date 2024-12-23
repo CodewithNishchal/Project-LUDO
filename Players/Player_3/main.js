@@ -1,5 +1,6 @@
 let dice_beads = document.querySelector('.dice-numbers>div').classList;
-var play = document.querySelector("button#play");
+var play = document.querySelector("button.dice_roll");
+var test = document.querySelector("#play-button");
 var main_box = document.querySelector("#main-box");
 var interrupt = document.querySelector(".interrupt");
 var player = document.querySelectorAll(".color-pallete > .color-box");
@@ -18,11 +19,12 @@ var base_validate = 0;
 
 setTimeout(function () {
     interrupt.style.visibility = "visible";
+    interrupt.classList.add('make_it_appear');
 }, 1000);
 
 
 
-//Choode Player 1 and Player 2
+//Choose Player 1 and Player 2
 for (let i = 0; i < player.length; i++) { 
     player[i].addEventListener('click', function () {
         
@@ -41,10 +43,20 @@ for (let i = 0; i < player.length; i++) {
             player2 = this.id;
             setTimeout(function () {
                 main_box.style.display = "grid";
-                interrupt.style.visibility = "hidden";
+                interrupt.classList.add('make_it_disappear');
                 setTimeout(function () {
-                    play.style.visibility = "visible";
-                }, 1000);
+                    interrupt.style.display = "none";
+                    test.style.display = "flex"
+                    play.setAttribute('id', 'play');
+                    test.classList.add('make_it_appear');
+                    setTimeout(function () {
+                        for (let i = 0; i < 4; i++)
+                        {
+                            document.querySelectorAll("div.safe-star")[i].classList.remove('make_it_appear');
+                            document.querySelectorAll("div.start-it")[i].classList.remove('make_it_appear');
+                        }
+                    }, 2000);
+                }, 850);
             }, 1000);
         }
     }) 
@@ -69,8 +81,10 @@ function start_base() {
                     {
                         if(base1[i].classList.contains(player1 + '-' + '0' + (i + 1)))
                             {
-                                base1[i].classList.remove(player1 + '-' + '0' + (i + 1));
+                                setTimeout(function () {
+                                    base1[i].classList.remove(player1 + '-' + '0' + (i + 1));
                                 document.querySelector("div.area > ." + player1 + '-1').classList.add(player1 + '-' + '0' + (i + 1));
+                                }, 100);
                                 player1_point[i] = 1;
                                 Dice_value = 0;
                             }
@@ -88,8 +102,10 @@ function start_base() {
                     {
                         if(base2[i].classList.contains(player2 + '-' + '0' + (i + 1)))
                         {
-                            base2[i].classList.remove(player2 + '-' + '0' + (i + 1));
-                            document.querySelector("div.area > ." + player2 + '-1').classList.add(player2 + '-' + '0' + (i + 1));
+                            setTimeout(function () {
+                                base2[i].classList.remove(player2 + '-' + '0' + (i + 1));
+                                document.querySelector("div.area > ." + player2 + '-1').classList.add(player2 + '-' + '0' + (i + 1));
+                            }, 200);
                             player2_point[i] = 1;
                             Dice_value = 0;
                         }
@@ -163,7 +179,6 @@ function start_base() {
 
 
                 
-            console.log(pointer.length);
             
             
             //Player 2 logic for bead in game
@@ -239,10 +254,9 @@ function start_base() {
                 player_point[playerNo] += Dice_value;
 
                 if (player_point[playerNo] < 52) {
-                    // pointer[i].classList.remove(playerName + '-0' + (playerNo + 1));
 
                     //check for bead on top 
-                    if (!topCheck.classList.contains("start-it"))
+                    if (!topCheck.classList.contains("start-it") && !topCheck.classList.contains("safe-star"))
                         beadOnTop(playerName, topCheck);
 
                     //Show Bead motion
@@ -264,15 +278,18 @@ function start_base() {
                     initial_distance++;
                     bead_motion(initial_distance, player_point[playerNo], playerName, playerNo);
 
+
                     //make dice value 0
                     Dice_value = 0;
                 }
                     
                 else if (player_point[playerNo] === 57) {
                     Dice_value = 0;
-                    pointer[i].classList.remove(playerName + '-0' + (playerNo + 1));
                     Player_winning[playerNo]++;
-                    checkWinner(Player_winning[playerNo]);
+                    bead_motion(initial_distance, 56, playerName, playerNo);
+                    setTimeout(function () {
+                        checkWinner(Player_winning[playerNo]);
+                    }, 500);
                 }
             }
         }

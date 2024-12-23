@@ -24,7 +24,7 @@ setTimeout(function () {
 
 
 
-//Choode Player 1 and Player 2
+//Choose Player 1 and Player 2
 for (let i = 0; i < player.length; i++) { 
     player[i].addEventListener('click', function () {
         
@@ -34,7 +34,9 @@ for (let i = 0; i < player.length; i++) {
         }, 100);
         if (player1 === null) {
             player1 = this.id;
-            document.querySelector('div#interrupt-box > h2').innerHTML = "Choose Player 2";
+            setTimeout(function () {
+                document.querySelector('div#interrupt-box > h2').innerHTML = "Choose Player 2";
+            }, 300);
         }
         else if (this.id === player1) {
             alert("Player 2 cannot be the same as Player 1");
@@ -49,7 +51,14 @@ for (let i = 0; i < player.length; i++) {
                     test.style.display = "flex"
                     play.setAttribute('id', 'play');
                     test.classList.add('make_it_appear');
-                }, 1000);
+                    setTimeout(function () {
+                        for (let i = 0; i < 4; i++)
+                        {
+                            document.querySelectorAll("div.safe-star")[i].classList.remove('make_it_appear');
+                            document.querySelectorAll("div.start-it")[i].classList.remove('make_it_appear');
+                        }
+                    }, 2000);
+                }, 850);
             }, 1000);
         }
     }) 
@@ -75,9 +84,9 @@ function start_base() {
                         if(base1[i].classList.contains(player1 + '-' + '0' + (i + 1)))
                             {
                                 setTimeout(function () {
-                                base1[i].classList.remove(player1 + '-' + '0' + (i + 1));
+                                    base1[i].classList.remove(player1 + '-' + '0' + (i + 1));
                                 document.querySelector("div.area > ." + player1 + '-1').classList.add(player1 + '-' + '0' + (i + 1));
-                                }, 200);
+                                }, 100);
                                 player1_point[i] = 1;
                                 Dice_value = 0;
                             }
@@ -172,7 +181,6 @@ function start_base() {
 
 
                 
-            console.log(pointer.length);
             
             
             //Player 2 logic for bead in game
@@ -228,13 +236,15 @@ function start_base() {
         //Supporting Fucntions
 
         // Check Winner Logic
-        function checkWinner(player_chosen)
+        function updateStatus(playerName, Points)
         {
-            if (player_chosen === 4)
-            {
-                alert("Player 1 Wins");
-                location.reload();
-            }
+            document.querySelector('.center-DOM').classList.remove('fade');
+            document.querySelector('.center-DOM').classList.add('unfade');
+            document.querySelector('.center-DOM>h2').innerHTML = "Player " + playerName + " has scored: <br>" + Points + " Points";
+            setTimeout(function () {
+                document.querySelector('.center-DOM').classList.remove('unfade');
+                document.querySelector('.center-DOM').classList.add('fade');
+            }, 5000);
         }
 
         // Move Bead Logic
@@ -250,7 +260,7 @@ function start_base() {
                 if (player_point[playerNo] < 52) {
 
                     //check for bead on top 
-                    if (!topCheck.classList.contains("start-it"))
+                    if (!topCheck.classList.contains("start-it") && !topCheck.classList.contains("safe-star"))
                         beadOnTop(playerName, topCheck);
 
                     //Show Bead motion
@@ -279,9 +289,11 @@ function start_base() {
                     
                 else if (player_point[playerNo] === 57) {
                     Dice_value = 0;
-                    pointer[i].classList.remove(playerName + '-0' + (playerNo + 1));
-                    Player_winning[playerNo]++;
-                    checkWinner(Player_winning[playerNo]);
+                    Player_winning[colors.indexOf(playerName)]++;
+                    bead_motion(initial_distance, 56, playerName, playerNo);
+                    setTimeout(function () {
+                        updateStatus(playerName, Player_winning[colors.indexOf(playerName)]);
+                    }, 500);
                 }
             }
         }
@@ -317,7 +329,12 @@ function start_base() {
         function bead_motion(initial_distance, final_distance,playerName,playerNo)
         {
             if (initial_distance >= final_distance)
+            {
+                setTimeout(function () {
+                    document.querySelector('div.game-area.' + playerName + '-' + 56).classList.remove(playerName + '-' + '0' + (playerNo + 1));
+                }, 300);
                 return;
+            }
 
             else if(initial_distance < final_distance) {
                 setTimeout(function () {

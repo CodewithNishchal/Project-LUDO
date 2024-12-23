@@ -41,7 +41,7 @@ div#interrupt-box
 
 div.color-pallete
 {
-    height: 50%; 
+    height: 40%; 
     width: 80%;
     background-color: rgba(0, 0, 0, 0.678);
     border-radius: 10%;
@@ -343,12 +343,6 @@ div#b-1
     align-self: flex-end;
 }
 
-div.b-1-red
-{
-    background-image: url('../../ludo\ images/red bead.png');
-    background-size: 100% 100%;
-    z-index: 1;
-}
 
 div#b-2
 {
@@ -418,6 +412,38 @@ div.B_red
     background-color: rgba(193, 13, 13, 0.723);
 }
 
+.red-base
+{
+    background-image: url('../../ludo\ images/base X/red-base-X.png');
+    background-color: rgba(150, 42, 42, 0.336);
+    background-size: 90% 90%;
+    background-position: center;
+}
+
+.blue-base
+{
+    background-image: url('../../ludo\ images/base X/blue-base-X.png');
+    background-color: rgba(42, 78, 150, 0.336);
+    background-size: 90% 90%;
+    background-position: center;
+}
+
+.yellow-base
+{
+    background-image: url('../../ludo\ images/base X/yellow-base-X.png');
+    background-color: rgba(150, 136, 42, 0.336);
+    background-size: 90% 90%;
+    background-position: center;
+}
+
+.green-base
+{
+    background-image: url('../../ludo\ images/base X/green-base-X.png');
+    background-color: rgba(44, 150, 42, 0.336);
+    background-size: 90% 90%;
+    background-position: center;
+}
+
 div.B_blue
 {
     background-color: rgba(11, 107, 198, 0.723);
@@ -432,6 +458,8 @@ div.B_green
 {
     background-color: rgba(0, 128, 0, 0.723);
 }
+
+
 
 
 /* Vertical path CSS */
@@ -549,8 +577,6 @@ div.h-safe-y {
     background-position: 40% 55%;
     background-repeat: no-repeat;
     background-color: rgba(193, 13, 13, 0.431);
-    animation-name: appear;
-    animation-duration: 1s;
 }
 
 .start-blue
@@ -559,8 +585,6 @@ div.h-safe-y {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-color: rgba(11, 108, 198, 0.431);
-    animation-name: appear;
-    animation-duration: 1s;
 }
 
 .start-green
@@ -568,9 +592,7 @@ div.h-safe-y {
     background-image: url('../../ludo\ images/Start Arrows/green-arrow.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-color: rgba(0, 128, 0, 0.723);
-    animation-name: appear;
-    animation-duration: 1s
+    background-color: rgba(0, 128, 0, 0.418);
 }
 
 .start-yellow
@@ -579,11 +601,35 @@ div.h-safe-y {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-color: rgba(217, 138, 27, 0.723);
-    animation-name: appear;
-    animation-duration: 1s;
 }
 
+.red-star
+{
+    background-image: url('../../ludo\ images/red-star.png');
+    background-size: 100% 100%;
+    background-color: aliceblue;
+}
 
+.green-star
+{
+    background-image: url('../../ludo\ images/green-star.png');
+    background-size: 100% 100%;
+    background-color: aliceblue;
+}
+
+.yellow-star
+{
+    background-image: url('../../ludo\ images/yellow-star.png');
+    background-size: 100% 100%;
+    background-color: aliceblue;
+}
+
+.blue-star
+{
+    background-image: url('../../ludo\ images/blue-star.png');
+    background-size: 100% 100%;
+    background-color: aliceblue;
+}
 
 
 
@@ -742,15 +788,42 @@ div.blue-04
     background-size: 100% 100%;
     background-repeat: no-repeat;
     border: solid black;
-    /* height: 150%;
-    width: 90%; */
     border-radius: 50%;
-    display: grid;
-    grid-template: repeat(2,1fr)/repeat(2,1fr);
-    /* rotate: 90deg; */
 }
 
+.center-DOM
+{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.787);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+.center-DOM > h2
+{
+    margin-top: 15%;
+    font-size: 2.8vh;
+    text-align: center;
+    color: rgb(222, 163, 37);
+    font-family: "Atma", system-ui;
+}
+
+
+
 /* Animations CSS */
+.unfade
+{
+    animation: appear 1s forwards;
+}
+
+.fade{
+    animation: disappear 1s forwards;
+}
+
 .make_it_appear
 {
     animation-name: appear;

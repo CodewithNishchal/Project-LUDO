@@ -30,10 +30,10 @@
         <div id="game-ludo">
             <div class="base base_blue"> <!-- Base of Blue -->
                 <div id="B-home" class="B_blue">
-                    <div class="B-indexes"><div id="b-1" class="blue-base-1 blue-01"></div></div>
-                    <div class="B-indexes"><div id="b-2" class="blue-base-2 blue-02"></div></div>
-                    <div class="B-indexes"><div id="b-3" class="blue-base-3 blue-03"></div></div>
-                    <div class="B-indexes"><div id="b-4" class="blue-base-4 blue-04"></div></div>
+                    <div class="B-indexes"><div id="b-1" class="blue-base blue-01"></div></div>
+                    <div class="B-indexes"><div id="b-2" class="blue-base blue-02"></div></div>
+                    <div class="B-indexes"><div id="b-3" class="blue-base blue-03"></div></div>
+                    <div class="B-indexes"><div id="b-4" class="blue-base blue-04"></div></div>
                 </div>
             </div>
             <div class="grid-v area up"> <!-- Area of Red -->
@@ -48,8 +48,8 @@
                     <div class="v-safe-r game-area base-red-4 red-55"></div>
                     <div class="v-safe-r game-area base-red-5 red-56"></div>
                 </div>
-                <div class="g-v-up start-red start-it game-area  red-1 blue-14 green-27 yellow-40" id=""></div>
-                <div class="g-v-up game-area red-48 blue-9 green-22 yellow-35"></div>
+                <div class="g-v-up start-red start-it game-area make_it_appear red-1 blue-14 green-27 yellow-40"></div>
+                <div class="g-v-up game-area safe-star red-star make_it_appear red-48 blue-9 green-22 yellow-35"></div>
                 <div class="g-v-up game-area red-2 blue-15 green-28 yellow-41"></div>
                 <div class="g-v-up game-area  red-47 blue-8 green-21 yellow-34"></div>
                 <div class="g-v-up game-area  red-3 blue-16 green-29 yellow-42"></div>
@@ -61,22 +61,22 @@
             <div class="base base_red"> <!-- Base of Red -->
                 <div id="B-home" class="B_red">
                     <div class="B-indexes">
-                        <div id="b-1" class="red-base-1 red-01"></div>
+                        <div id="b-1" class="red-base red-01"></div>
                     </div>
                     <div class="B-indexes">
-                        <div id="b-2" class="red-base-2 red-02"></div>
+                        <div id="b-2" class="red-base red-02"></div>
                     </div>
                     <div class="B-indexes">
-                        <div id="b-3" class="red-base-3 red-03"></div>
+                        <div id="b-3" class="red-base red-03"></div>
                     </div>
                     <div class="B-indexes">
-                        <div id="b-4" class="red-base-4 red-04"></div>
+                        <div id="b-4" class="red-base red-04"></div>
                     </div>
                 </div>
             </div>
             <div class="grid-h area left"> <!-- Area of Blue -->
                 <div class="g-h-left game-area  red-39 green-13 yellow-26"></div>
-                <div class="g-h-left start-blue start-it game-area  red-40 blue-1 green-14 yellow-27"></div>
+                <div class="g-h-left start-blue start-it game-area make_it_appear red-40 blue-1 green-14 yellow-27"></div>
                 <div class="g-h-left game-area  red-41 blue-2 green-15 yellow-28"></div>
                 <div class="g-h-left game-area  red-42 blue-3 green-16 yellow-29"></div>
                 <div class="g-h-left game-area  red-43 blue-4 green-17 yellow-30"></div>
@@ -91,19 +91,21 @@
                 </div>
                 <div class="g-h-left game-area  red-37 blue-50 green-11 yellow-24"></div>
                 <div class="g-h-left game-area  red-36 blue-49 green-10 yellow-23"></div>
-                <div class="g-h-left game-area  red-35 blue-48 green-9 yellow-22"></div>
+                <div class="g-h-left game-area  safe-star blue-star make_it_appear red-35 blue-48 green-9 yellow-22"></div>
                 <div class="g-h-left game-area  red-34 blue-47 green-8 yellow-21"></div>
                 <div class="g-h-left game-area  red-33 blue-46 green-7 yellow-20"></div>
                 <div class="g-h-left game-area  red-32 blue-45 green-6 yellow-19"></div>
             </div>
             <div class="Center">
-                <div class="center-grid"></div>
+                <div class="center-DOM">
+                    <h2>This is the updataion area and is not visible</h2>
+                </div>
             </div>
             <div class="grid-h area right"> <!-- Area of Yellow -->
                 <div class="g-h-right game-area  red-6 blue-19 green-32 yellow-45"></div>
                 <div class="g-h-right game-area  red-7 blue-20 green-33 yellow-46"></div>
                 <div class="g-h-right game-area  red-8 blue-21 green-34 yellow-47"></div>
-                <div class="g-h-right game-area  red-9 blue-22 green-35 yellow-48"></div>
+                <div class="g-h-right game-area  safe-star yellow-star make_it_appear red-9 blue-22 green-35 yellow-48"></div>
                 <div class="g-h-right game-area  red-10 blue-23 green-36 yellow-49"></div>
                 <div class="g-h-right game-area  red-11 blue-24 green-37 yellow-50"></div>
                 <div class="g-h-right h-safe yellow-safe">
@@ -118,22 +120,22 @@
                 <div class="g-h-right game-area  red-17 blue-30 green-43 yellow-4"></div>
                 <div class="g-h-right game-area  red-16 blue-29 green-42 yellow-3"></div>
                 <div class="g-h-right game-area  red-15 blue-28 green-41 yellow-2"></div>
-                <div class="g-h-right game-area start-it start-yellow red-14 blue-27 green-40 yellow-1"></div>
+                <div class="g-h-right game-area start-it start-yellow make_it_appear red-14 blue-27 green-40 yellow-1"></div>
                 <div class="g-h-right game-area  red-13 blue-26 green-39"></div>
             </div>
             <div class="base base_green"> <!-- Base of Green -->
                 <div id="B-home" class="B_green">
                     <div class="B-indexes">
-                        <div id="b-1" class="green-base-1 green-01"></div>
+                        <div id="b-1" class="green-base green-01"></div>
                     </div>
                     <div class="B-indexes">
-                        <div id="b-2" class="green-base-2 green-02"></div>
+                        <div id="b-2" class="green-base green-02"></div>
                     </div>
                     <div class="B-indexes">
-                        <div id="b-3" class="green-base-3 green-03"></div>
+                        <div id="b-3" class="green-base green-03"></div>
                     </div>
                     <div class="B-indexes">
-                        <div id="b-4" class="green-base-4 green-04"></div>
+                        <div id="b-4" class="green-base green-04"></div>
                     </div>
                 </div>
             </div>
@@ -152,8 +154,8 @@
                 <div class="g-v-down game-area  red-29 blue-42 green-3 yellow-16"></div>
                 <div class="g-v-down game-area  red-21 blue-34 green-47 yellow-8"></div>
                 <div class="g-v-down game-area  red-28 blue-41 green-2 yellow-15"></div>
-                <div class="g-v-down game-area  red-22 blue-35 green-48 yellow-9"></div>
-                <div class="g-v-down game-area start-it start-green red-27 blue-40 yellow-14 green-1"></div>
+                <div class="g-v-down game-area  safe-star green-star make_it_appear  red-22 blue-35 green-48 yellow-9"></div>
+                <div class="g-v-down game-area start-it start-green make_it_appear red-27 blue-40 yellow-14 green-1"></div>
                 <div class="g-v-down game-area  red-23 blue-36 green-49 yellow-10"></div>
                 <div class="g-v-down game-area  red-26 blue-39 yellow-13"></div>
                 <div class="g-v-down game-area  red-25 blue-38 green-51 yellow-12"></div>
@@ -162,16 +164,16 @@
             <div class="base base_yellow"> <!-- Base of Yellow -->
                 <div id="B-home" class="B_yellow">
                     <div class="B-indexes">
-                        <div id="b-1" class="yellow-base-1 yellow-01"></div>
+                        <div id="b-1" class="yellow-base yellow-01"></div>
                     </div>
                     <div class="B-indexes">
-                        <div id="b-2" class="yellow-base-1 yellow-02"></div>
+                        <div id="b-2" class="yellow-base yellow-02"></div>
                     </div>
                     <div class="B-indexes">
-                        <div id="b-3" class="yellow-base-1 yellow-03"></div>
+                        <div id="b-3" class="yellow-base yellow-03"></div>
                     </div>
                     <div class="B-indexes">
-                        <div id="b-4" class="yellow-base-1 yellow-04"></div>
+                        <div id="b-4" class="yellow-base yellow-04"></div>
                     </div>
                 </div>
             </div>
