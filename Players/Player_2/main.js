@@ -16,6 +16,7 @@ var count_of_six = 0;
 var prev_value = 0;
 var random = 0;
 var base_validate = 0;
+var bead_cut = 0;
 
 setTimeout(function () {
     interrupt.style.visibility = "visible";
@@ -29,9 +30,9 @@ for (let i = 0; i < player.length; i++) {
     player[i].addEventListener('click', function () {
         
         player[i].classList.add('pressed');
-        setTimeout(function () {
-            player[i].classList.remove('pressed');
-        }, 100);
+        // setTimeout(function () {
+        //     player[i].classList.remove('pressed');
+        // }, 100);
         if (player1 === null) {
             player1 = this.id;
             setTimeout(function () {
@@ -310,6 +311,7 @@ function start_base() {
         function beadOnTop(playerName, topCheck)
         {
             var skip = colors.indexOf(playerName);
+            var playerSecond;
             console.log(skip); 
             for (let i = 1; i <= 4; i++)
                 for (let j = 0; j < colors.length; j++)
@@ -319,7 +321,14 @@ function start_base() {
 
                     if (topCheck.classList.contains(colors[j] + '-0' + i))
                     {
+                        if (player1 === colors[j])
+                            playerSecond = player1;
+
+                        else 
+                            playerSecond = player2;
+
                         topCheck.classList.remove(colors[j] + '-0' + i);
+                        bead_cut = 1;
                         setTimeout(function () {
                             document.querySelectorAll('div.B_' + colors[j] + '> div.B-indexes > div')[i-1].classList.add(colors[j] + '-0' + i);
                             document.querySelector('.center-DOM').classList.remove('fade');
@@ -328,6 +337,7 @@ function start_base() {
                             document.querySelector('.center-DOM>h2').innerHTML = "Player " + playerName + " has devoured " + "Player " + playerSecond;
                             setTimeout(function () {
                                 document.querySelector('.center-DOM').classList.remove('unfade');
+                                document.querySelector('.center-DOM').classList.remove('sword-fight');
                                 document.querySelector('.center-DOM').classList.add('fade');
                             }, 5000);
                          },300);
@@ -398,10 +408,12 @@ function rotateDice()
         AddRemove(1, function ()
         {
             dice_beads.add("bead_" + random);
-            if (prev_value !== 6)
-            {
+            if (prev_value !== 6 && bead_cut === 0) {
                 Player_turn++;
+                document.querySelector('.dice_roll').innerHTML = "Player " + ((Player_turn % 2) + 1) + "'s turn";
             }
+
+            bead_cut = 0;
             start_base();
             move_player();
     })

@@ -31,9 +31,9 @@ for (let i = 0; i < player.length; i++) {
     player[i].addEventListener('click', function () {
         
         player[i].classList.add('pressed');
-        setTimeout(function () {
-            player[i].classList.remove('pressed');
-        }, 100);
+        // setTimeout(function () {
+        //     player[i].classList.remove('pressed');
+        // }, 100);
         if (player1 === null) {
             player1 = this.id;
             setTimeout(function () {
