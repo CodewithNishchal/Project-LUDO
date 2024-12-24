@@ -788,15 +788,42 @@ div.blue-04
     background-size: 100% 100%;
     background-repeat: no-repeat;
     border: solid black;
-    /* height: 150%;
-    width: 90%; */
     border-radius: 50%;
-    display: grid;
-    grid-template: repeat(2,1fr)/repeat(2,1fr);
-    /* rotate: 90deg; */
 }
 
+.center-DOM
+{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.787);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+.center-DOM > h2
+{
+    margin-top: 15%;
+    font-size: 2.8vh;
+    text-align: center;
+    color: rgb(222, 163, 37);
+    font-family: "Atma", system-ui;
+}
+
+
+
 /* Animations CSS */
+.unfade
+{
+    animation: appear 1s forwards;
+}
+
+.fade{
+    animation: disappear 1s forwards;
+}
+
 .make_it_appear
 {
     animation-name: appear;

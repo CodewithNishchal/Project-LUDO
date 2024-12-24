@@ -34,7 +34,9 @@ for (let i = 0; i < player.length; i++) {
         }, 100);
         if (player1 === null) {
             player1 = this.id;
-            document.querySelector('div#interrupt-box > h2').innerHTML = "Choose Player 2";
+            setTimeout(function () {
+                document.querySelector('div#interrupt-box > h2').innerHTML = "Choose Player 2";
+            }, 300);
         }
         else if (this.id === player1) {
             alert("Player 2 cannot be the same as Player 1");
@@ -234,13 +236,15 @@ function start_base() {
         //Supporting Fucntions
 
         // Check Winner Logic
-        function checkWinner(player_chosen)
+        function updateStatus(playerName, Points)
         {
-            if (player_chosen === 4)
-            {
-                alert("Player 1 Wins");
-                location.reload();
-            }
+            document.querySelector('.center-DOM').classList.remove('fade');
+            document.querySelector('.center-DOM').classList.add('unfade');
+            document.querySelector('.center-DOM>h2').innerHTML = "Player " + playerName + " has scored: <br>" + Points + " Points";
+            setTimeout(function () {
+                document.querySelector('.center-DOM').classList.remove('unfade');
+                document.querySelector('.center-DOM').classList.add('fade');
+            }, 5000);
         }
 
         // Move Bead Logic
@@ -285,10 +289,10 @@ function start_base() {
                     
                 else if (player_point[playerNo] === 57) {
                     Dice_value = 0;
-                    Player_winning[playerNo]++;
+                    Player_winning[colors.indexOf(playerName)]++;
                     bead_motion(initial_distance, 56, playerName, playerNo);
                     setTimeout(function () {
-                        checkWinner(Player_winning[playerNo]);
+                        updateStatus(playerName, Player_winning[colors.indexOf(playerName)]);
                     }, 500);
                 }
             }
@@ -325,7 +329,12 @@ function start_base() {
         function bead_motion(initial_distance, final_distance,playerName,playerNo)
         {
             if (initial_distance >= final_distance)
+            {
+                setTimeout(function () {
+                    document.querySelector('div.game-area.' + playerName + '-' + 56).classList.remove(playerName + '-' + '0' + (playerNo + 1));
+                }, 300);
                 return;
+            }
 
             else if(initial_distance < final_distance) {
                 setTimeout(function () {

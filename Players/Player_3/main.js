@@ -10,6 +10,8 @@ var player1 = null;
 let player1_point = [0,0,0,0];
 var player2 = null;
 let player2_point = [0,0,0,0];
+var player3 = null;
+let player3_point = [0,0,0,0];
 var Dice_value = 0;
 var Player_turn = -1;
 var count_of_six = 0;
@@ -34,13 +36,33 @@ for (let i = 0; i < player.length; i++) {
         }, 100);
         if (player1 === null) {
             player1 = this.id;
-            document.querySelector('div#interrupt-box > h2').innerHTML = "Choose Player 2";
+            setTimeout(function () {
+                document.querySelector('div#interrupt-box > h2').innerHTML = "Choose Player 2";
+            }, 300);
         }
         else if (this.id === player1) {
             alert("Player 2 cannot be the same as Player 1");
         }
-        else {
+        
+        else if (player2 === null)
+        {
             player2 = this.id;
+            setTimeout(function () {
+                document.querySelector('div#interrupt-box > h2').innerHTML = "Choose Player 3";
+            }, 300);
+        }
+        
+        else if (this.id === player1 || this.id === player2)
+        {
+            if (this.id === player1)
+                alert("Player 3 cannot be the same as Player 1");
+
+            else
+                alert("Player 3 cannot be the same as Player 2")
+        }
+            
+        else {
+            player3 = this.id;
             setTimeout(function () {
                 main_box.style.display = "grid";
                 interrupt.classList.add('make_it_disappear');
@@ -70,13 +92,14 @@ for (let i = 0; i < player.length; i++) {
 function start_base() {
     var base1 = document.querySelectorAll('div.B_' + player1 + '> div.B-indexes > div');
     var base2 = document.querySelectorAll('div.B_' + player2 + '> div.B-indexes > div');
+    var base3 = document.querySelectorAll('div.B_' + player3 + '> div.B-indexes > div');
 
 
     //Player 1 logic for base
     {
         for (let i = 0; i < base1.length; i++) {
             base1[i].addEventListener('click', function () {
-                if (Player_turn % 2 === 0)
+                if (Player_turn % 3 === 0)
                     if (Dice_value === 1 || Dice_value === 6)
                     {
                         if(base1[i].classList.contains(player1 + '-' + '0' + (i + 1)))
@@ -97,7 +120,7 @@ function start_base() {
     {
         for (let i = 0; i < base2.length; i++) {
             base2[i].addEventListener('click', function () {
-                if(Player_turn % 2 !== 0)
+                if(Player_turn % 3 === 1)
                     if (Dice_value === 1 || Dice_value === 6)
                     {
                         if(base2[i].classList.contains(player2 + '-' + '0' + (i + 1)))
@@ -107,6 +130,27 @@ function start_base() {
                                 document.querySelector("div.area > ." + player2 + '-1').classList.add(player2 + '-' + '0' + (i + 1));
                             }, 200);
                             player2_point[i] = 1;
+                            Dice_value = 0;
+                        }
+                    }
+            });
+        }
+    }
+
+    //Player 3 logic for base
+    {
+        for (let i = 0; i < base3.length; i++) {
+            base3[i].addEventListener('click', function () {
+                if(Player_turn % 3 === 2)
+                    if (Dice_value === 1 || Dice_value === 6)
+                    {
+                        if(base3[i].classList.contains(player3 + '-' + '0' + (i + 1)))
+                        {
+                            setTimeout(function () {
+                                base3[i].classList.remove(player3 + '-' + '0' + (i + 1));
+                                document.querySelector("div.area > ." + player3 + '-1').classList.add(player3 + '-' + '0' + (i + 1));
+                            }, 200);
+                            player3_point[i] = 1;
                             Dice_value = 0;
                         }
                     }
@@ -132,7 +176,7 @@ function start_base() {
             //logic for player 1 bead 1
             for (let i = 0; i < pointer.length; i++) {
                     pointer[i].addEventListener('click', function () {
-                        if (Player_turn % 2 === 0)
+                        if (Player_turn % 3 === 0)
                             if (pointer[i].classList.contains(player1 + '-0' + 1)) 
                             {
                                 moveBead(0, i, pointer, player1_point, player1);
@@ -144,7 +188,7 @@ function start_base() {
             //logic for player 1 bead 2
             for (let i = 0; i < pointer.length; i++) {
                     pointer[i].addEventListener('click', function () {
-                        if (Player_turn % 2 === 0)
+                        if (Player_turn % 3 === 0)
                             if (pointer[i].classList.contains(player1 + '-0' + 2)) 
                             {
                                 moveBead(1, i, pointer, player1_point, player1);
@@ -155,7 +199,7 @@ function start_base() {
             //logic for player 1 bead 3
             for (let i = 0; i < pointer.length; i++) {
                     pointer[i].addEventListener('click', function () {
-                        if (Player_turn % 2 === 0)
+                        if (Player_turn % 3 === 0)
                             if (pointer[i].classList.contains(player1 + '-0' + 3)) 
                             {
                                 moveBead(2, i, pointer, player1_point, player1);
@@ -166,7 +210,7 @@ function start_base() {
             //logic for player 1 bead 4
             for (let i = 0; i < pointer.length; i++) {
                     pointer[i].addEventListener('click', function () {
-                        if (Player_turn % 2 === 0)
+                        if (Player_turn % 3 === 0)
                             if (pointer[i].classList.contains(player1 + '-0' + 4)) 
                             {
                                 moveBead(3, i, pointer, player1_point, player1);
@@ -186,7 +230,7 @@ function start_base() {
             //logic for player 2 bead 1
             for (let i = 0; i < pointer.length; i++) {
                 pointer[i].addEventListener('click', function () {
-                    if (Player_turn % 2 !== 0)
+                    if (Player_turn % 3 === 1)
                         if (pointer[i].classList.contains(player2 + '-0' + 1)) 
                         {
                             moveBead(0, i, pointer, player2_point, player2);                          
@@ -197,7 +241,7 @@ function start_base() {
             //logic for player 2 bead 2
             for (let i = 0; i < pointer.length; i++) {
                 pointer[i].addEventListener('click', function () {
-                    if (Player_turn % 2 !== 0)
+                    if (Player_turn % 3 === 1)
                         if (pointer[i].classList.contains(player2 + '-0' + 2)) 
                         {
                             moveBead(1, i, pointer, player2_point, player2);                           
@@ -209,7 +253,7 @@ function start_base() {
             //logic for player 2 bead 3
             for (let i = 0; i < pointer.length; i++) {
                 pointer[i].addEventListener('click', function () {
-                    if (Player_turn % 2 !== 0)
+                    if (Player_turn % 3 === 1)
                         if (pointer[i].classList.contains(player2 + '-0' + 3)) 
                         {
                             moveBead(2, i, pointer, player2_point, player2);                            
@@ -220,10 +264,59 @@ function start_base() {
             //logic for player 2 bead 4
             for (let i = 0; i < pointer.length; i++) {
                 pointer[i].addEventListener('click', function () {
-                    if (Player_turn % 2 !== 0)
+                    if (Player_turn % 3 === 1)
                         if (pointer[i].classList.contains(player2 + '-0' + 4)) 
                         {
                             moveBead(3, i, pointer, player2_point, player2);                             
+                        }
+                });
+            }
+
+
+
+            //Player 3 logic for bead in game
+            
+            //logic for player 3 bead 1
+            for (let i = 0; i < pointer.length; i++) {
+                pointer[i].addEventListener('click', function () {
+                    if (Player_turn % 3 === 2)
+                        if (pointer[i].classList.contains(player3 + '-0' + 1)) 
+                        {
+                            moveBead(0, i, pointer, player3_point, player3);                          
+                        }
+                });
+            }
+            
+            //logic for player 3 bead 2
+            for (let i = 0; i < pointer.length; i++) {
+                pointer[i].addEventListener('click', function () {
+                    if (Player_turn % 3 === 2)
+                        if (pointer[i].classList.contains(player3 + '-0' + 2)) 
+                        {
+                            moveBead(1, i, pointer, player3_point, player3);                           
+
+                        }
+                });
+            }
+
+            //logic for player 3 bead 3
+            for (let i = 0; i < pointer.length; i++) {
+                pointer[i].addEventListener('click', function () {
+                    if (Player_turn % 3 === 2)
+                        if (pointer[i].classList.contains(player3 + '-0' + 3)) 
+                        {
+                            moveBead(2, i, pointer, player3_point, player3);                            
+                        }
+                });
+            }
+
+            //logic for player 3 bead 4
+            for (let i = 0; i < pointer.length; i++) {
+                pointer[i].addEventListener('click', function () {
+                    if (Player_turn % 3 === 2)
+                        if (pointer[i].classList.contains(player3 + '-0' + 4)) 
+                        {
+                            moveBead(3, i, pointer, player3_point, player3);                             
                         }
                 });
             }
@@ -234,13 +327,15 @@ function start_base() {
         //Supporting Fucntions
 
         // Check Winner Logic
-        function checkWinner(player_chosen)
+        function updateStatus(playerName, Points)
         {
-            if (player_chosen === 4)
-            {
-                alert("Player 1 Wins");
-                location.reload();
-            }
+            document.querySelector('.center-DOM').classList.remove('fade');
+            document.querySelector('.center-DOM').classList.add('unfade');
+            document.querySelector('.center-DOM>h2').innerHTML = "Player " + playerName + " has scored: <br>" + Points + " Points";
+            setTimeout(function () {
+                document.querySelector('.center-DOM').classList.remove('unfade');
+                document.querySelector('.center-DOM').classList.add('fade');
+            }, 5000);
         }
 
         // Move Bead Logic
@@ -284,11 +379,19 @@ function start_base() {
                 }
                     
                 else if (player_point[playerNo] === 57) {
+                    
+                    // Stop the next player until rotating the dice
                     Dice_value = 0;
-                    Player_winning[playerNo]++;
+
+                    //Increase the points of player entering base
+                    Player_winning[colors.indexOf(playerName)]++;
+
+                    //Move the bead to final stop
                     bead_motion(initial_distance, 56, playerName, playerNo);
+
+                    //Tell the Player that the bead has reached the home
                     setTimeout(function () {
-                        checkWinner(Player_winning[playerNo]);
+                        updateStatus(playerName, Player_winning[colors.indexOf(playerName)]);
                     }, 500);
                 }
             }
@@ -299,6 +402,7 @@ function start_base() {
         function beadOnTop(playerName, topCheck)
         {
             var skip = colors.indexOf(playerName);
+            var playerSecond;
             console.log(skip); 
             for (let i = 1; i <= 4; i++)
                 for (let j = 0; j < colors.length; j++)
@@ -308,10 +412,28 @@ function start_base() {
 
                     if (topCheck.classList.contains(colors[j] + '-0' + i))
                     {
+                        if (player1 === colors[j])
+                            playerSecond = player1;
+
+                        else if (player2 === colors[j])
+                            playerSecond = player2;
+
+                        else
+                            playerSecond = player3;
+
+                        
                         topCheck.classList.remove(colors[j] + '-0' + i);
                         setTimeout(function () {
                             document.querySelectorAll('div.B_' + colors[j] + '> div.B-indexes > div')[i-1].classList.add(colors[j] + '-0' + i);
-                         },300);
+                            document.querySelector('.center-DOM').classList.remove('fade');
+                            document.querySelector('.center-DOM').classList.add('unfade');
+                            document.querySelector('.center-DOM').classList.add('sword-fight');
+                            document.querySelector('.center-DOM>h2').innerHTML = "Player " + playerName + " has devoured " + "Player " + playerSecond;
+                            setTimeout(function () {
+                                document.querySelector('.center-DOM').classList.remove('unfade');
+                                document.querySelector('.center-DOM').classList.add('fade');
+                            }, 5000);
+                        }, 300);
                         return;
                     }
                 }
@@ -325,7 +447,12 @@ function start_base() {
         function bead_motion(initial_distance, final_distance,playerName,playerNo)
         {
             if (initial_distance >= final_distance)
+            {
+                setTimeout(function () {
+                    document.querySelector('div.game-area.' + playerName + '-' + 56).classList.remove(playerName + '-' + '0' + (playerNo + 1));
+                }, 300);
                 return;
+            }
 
             else if(initial_distance < final_distance) {
                 setTimeout(function () {

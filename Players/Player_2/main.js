@@ -288,9 +288,16 @@ function start_base() {
                 }
                     
                 else if (player_point[playerNo] === 57) {
+                    // Stop the next player until rotating the dice
                     Dice_value = 0;
+
+                    //Increase the points of player entering base
                     Player_winning[colors.indexOf(playerName)]++;
+
+                    //Move the bead to final stop
                     bead_motion(initial_distance, 56, playerName, playerNo);
+
+                    //Tell the Player that the bead has reached the home
                     setTimeout(function () {
                         updateStatus(playerName, Player_winning[colors.indexOf(playerName)]);
                     }, 500);
@@ -315,6 +322,14 @@ function start_base() {
                         topCheck.classList.remove(colors[j] + '-0' + i);
                         setTimeout(function () {
                             document.querySelectorAll('div.B_' + colors[j] + '> div.B-indexes > div')[i-1].classList.add(colors[j] + '-0' + i);
+                            document.querySelector('.center-DOM').classList.remove('fade');
+                            document.querySelector('.center-DOM').classList.add('unfade');
+                            document.querySelector('.center-DOM').classList.add('sword-fight');
+                            document.querySelector('.center-DOM>h2').innerHTML = "Player " + playerName + " has devoured " + "Player " + playerSecond;
+                            setTimeout(function () {
+                                document.querySelector('.center-DOM').classList.remove('unfade');
+                                document.querySelector('.center-DOM').classList.add('fade');
+                            }, 5000);
                          },300);
                         return;
                     }
