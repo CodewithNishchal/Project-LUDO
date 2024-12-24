@@ -89,7 +89,10 @@ function start_base() {
                                 document.querySelector("div.area > ." + player1 + '-1').classList.add(player1 + '-' + '0' + (i + 1));
                                 }, 100);
                                 player1_point[i] = 1;
-                                Dice_value = 0;
+                            Dice_value = 0;
+                            setTimeout(function () {
+                                document.querySelector('.dice_roll').innerHTML = "Roll!";
+                            }, 500);
                             }
                     }
             });
@@ -111,6 +114,9 @@ function start_base() {
                             }, 200);
                             player2_point[i] = 1;
                             Dice_value = 0;
+                            setTimeout(function () {
+                                document.querySelector('.dice_roll').innerHTML = "Roll!";
+                            }, 500);
                         }
                     }
             });
@@ -272,6 +278,9 @@ function start_base() {
 
                     //make dice value 0
                     Dice_value = 0;
+                    setTimeout(function () {
+                        document.querySelector('.dice_roll').innerHTML = "Roll!";
+                    }, 500);
                 }
                 
                 else if (player_point[playerNo] < 57) {
@@ -286,17 +295,26 @@ function start_base() {
 
                     //make dice value 0
                     Dice_value = 0;
+                    setTimeout(function () {
+                        document.querySelector('.dice_roll').innerHTML = "Roll!";
+                    }, 500);
                 }
                     
                 else if (player_point[playerNo] === 57) {
                     // Stop the next player until rotating the dice
                     Dice_value = 0;
+                    setTimeout(function () {
+                        document.querySelector('.dice_roll').innerHTML = "Roll!";
+                    }, 500);
 
                     //Increase the points of player entering base
                     Player_winning[colors.indexOf(playerName)]++;
 
                     //Move the bead to final stop
                     bead_motion(initial_distance, 56, playerName, playerNo);
+                    setTimeout(function () {
+                        document.querySelector('div.game-area.' + playerName + '-' + 56).classList.remove(playerName + '-' + '0' + (playerNo + 1));
+                    }, 300);
 
                     //Tell the Player that the bead has reached the home
                     setTimeout(function () {
@@ -355,9 +373,6 @@ function start_base() {
         {
             if (initial_distance >= final_distance)
             {
-                setTimeout(function () {
-                    document.querySelector('div.game-area.' + playerName + '-' + 56).classList.remove(playerName + '-' + '0' + (playerNo + 1));
-                }, 300);
                 return;
             }
 
@@ -408,10 +423,11 @@ function rotateDice()
         AddRemove(1, function ()
         {
             dice_beads.add("bead_" + random);
+            
             if (prev_value !== 6 && bead_cut === 0) {
                 Player_turn++;
-                document.querySelector('.dice_roll').innerHTML = "Player " + ((Player_turn % 2) + 1) + "'s turn";
             }
+            document.querySelector('.dice_roll').innerHTML = "Player " + ((Player_turn % 2) + 1) + "'s turn";
 
             bead_cut = 0;
             start_base();
