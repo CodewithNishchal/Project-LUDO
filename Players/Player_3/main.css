@@ -39,6 +39,10 @@ div#interrupt-box
     align-items: center;
 }
 
+div#interrupt-box > h2{
+    font-size: 7vh;
+}
+
 div.color-pallete
 {
     height: 40%; 
@@ -161,7 +165,7 @@ div > #dicee
     background-color: rgb(191, 191, 191);
     border-radius: 50%;
     margin-top: 10%;
-    background-image: url('../../ludo\ images/Dice.png');
+    background-image: url('../../ludo\ images/Main Dice/Dice.png');
     background-size: 130% 110%;
     background-repeat: no-repeat; 
     background-position: center;
@@ -287,7 +291,7 @@ button#play:hover
 div>#game-ludo {
     grid-row: span 3;
     background-color: whitesmoke;
-    background-image: url('../../ludo\ images/back.jpg');
+    background-image: url('../../ludo\ images/Background/back.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     border-radius: 15%;
@@ -605,28 +609,28 @@ div.h-safe-y {
 
 .red-star
 {
-    background-image: url('../../ludo\ images/red-star.png');
+    background-image: url('../../ludo\ images/Safe Stars/red-star.png');
     background-size: 100% 100%;
     background-color: aliceblue;
 }
 
 .green-star
 {
-    background-image: url('../../ludo\ images/green-star.png');
+    background-image: url('../../ludo\ images/Safe Stars/green-star.png');
     background-size: 100% 100%;
     background-color: aliceblue;
 }
 
 .yellow-star
 {
-    background-image: url('../../ludo\ images/yellow-star.png');
+    background-image: url('../../ludo\ images/Safe Stars/yellow-star.png');
     background-size: 100% 100%;
     background-color: aliceblue;
 }
 
 .blue-star
 {
-    background-image: url('../../ludo\ images/blue-star.png');
+    background-image: url('../../ludo\ images/Safe Stars/blue-star.png');
     background-size: 100% 100%;
     background-color: aliceblue;
 }
@@ -784,7 +788,7 @@ div.blue-04
 /* Main game center CSS */
 .Center
 {
-    background-image: url('../../ludo\ images/center.png');
+    background-image: url('../../ludo\ images/Center/center.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     border: solid black;
@@ -814,7 +818,7 @@ div.blue-04
 
 .sword-fight
 {
-    background-image: url('../../ludo\ images/sword-fight.png');
+    background-image: url('../../ludo\ images/Center/sword-fight.png');
     background-size: 100% 100%;
 }
 
@@ -851,4 +855,41 @@ div.blue-04
 @keyframes disappear {
     0%{opacity: 1;}
     100%{opacity: 0;}
+}
+
+
+
+/* Main game adjustments for mobile Screens */
+@media (min-width: 481px) and (max-width: 1200px) {
+    #main-box {
+            /* filter: blur(0px); */
+            display: grid;
+            height: 97vh;
+            width: 98%;
+            margin-top: 0.3vh;
+            grid-template: 1fr 1fr 0.9fr / 1fr 0.25fr;
+            column-gap: 2vh
+        }
+
+        div>#game-ludo {
+            grid-row: span 3;
+            background-color: whitesmoke;
+            background-image: url('../../ludo\ images/back.jpg');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            border-radius: 15%;
+            border: solid rgb(209, 101, 13) 1vh;
+            margin: 1%;
+            margin-right: 8%;
+            margin-left: 4%;
+            display: grid;
+            grid-template: 1fr 0.6fr 1fr / 1fr 0.7fr 1fr;
+        }
+
+        div>.bead_1 {
+            margin: 30% 25%;
+            background-image: url('../../ludo\ images/Dice Beads/Bead 1.jpg');
+            background-size: 100% 100% ;
+            background-repeat: no-repeat;
+        }
 }

@@ -10,7 +10,7 @@ div#center_stage
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100vh
 }
 
 a.Player_detail

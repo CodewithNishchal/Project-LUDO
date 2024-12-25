@@ -525,7 +525,7 @@ function rotateDice()
             if (prev_value !== 6 && bead_cut === 0) {
                 Player_turn++;
             }
-            document.querySelector('.dice_roll').innerHTML = "Player " + ((Player_turn % 2) + 1) + "'s turn";
+            document.querySelector('.dice_roll').innerHTML = "Player " + ((Player_turn % 3) + 1) + "'s turn";
 
             bead_cut = 0;
             start_base();
