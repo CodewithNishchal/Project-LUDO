@@ -18,15 +18,15 @@ a.Player_detail
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20vh;
-    width: 25vh;
+    height: 25vh;
+    width: 30vh;
     border-radius: 15%;
     background: rgb(154, 222, 194);
     background: linear-gradient(90deg, rgba(154, 222, 194, 1) 0%, rgba(238, 152, 12, 1) 100%);
-    margin: 10px;
+    margin: 2%;
     text-decoration: none;
     color: rgb(121, 28, 104);
-    font-size: 50px;
+    font-size: 5vh;
     font-weight: 500;
     transition: height 0.5s, width 0.5s, background-image 0.5s ease-in-out, color 0.5s, font-size 0.5s, font-family 0.5s;
     font-family: "Atma", system-ui;
@@ -35,17 +35,20 @@ a.Player_detail
 a.Player_detail:hover 
 {
     text-decoration: none;
-    font-size: 50px;
-    height: 30vh;
-    width: 35vh;
+    font-size: 6vh;
+    height: 35vh;
+    width: 40vh;
     background-image: url('./ludo\ images/Players/2-players.png');
     background-size: 100% 100%;
     font-family: "Atma", system-ui;
     border-radius: 20%;
     color: rgb(248, 124, 0);
     font-weight: 900;
-    font-size: 50px;
     font-family: "Atma", system-ui;
+}
+
+@media screen {
+    
 }
 
 a.three:hover {

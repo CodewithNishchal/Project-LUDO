@@ -39,6 +39,11 @@ div#interrupt-box
     align-items: center;
 }
 
+div#interrupt-box > h2
+{
+    font-size: 8vh;
+}
+
 div.color-pallete
 {
     height: 40%; 
