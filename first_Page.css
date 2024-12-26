@@ -32,33 +32,61 @@ a.Player_detail
     font-family: "Atma", system-ui;
 }
 
-a.Player_detail:hover 
-{
-    text-decoration: none;
-    font-size: 6vh;
-    height: 35vh;
-    width: 40vh;
-    background-image: url('./ludo\ images/Players/2-players.png');
-    background-size: 100% 100%;
-    font-family: "Atma", system-ui;
-    border-radius: 20%;
-    color: rgb(248, 124, 0);
-    font-weight: 900;
-    font-family: "Atma", system-ui;
+@media (min-width: 900px) {
+    a.Player_detail:hover {
+            text-decoration: none;
+            font-size: 6vh;
+            height: 35vh;
+            width: 40vh;
+            background-image: url('./ludo\ images/Players/2-players.png');
+            background-size: 100% 100%;
+            font-family: "Atma", system-ui;
+            border-radius: 20%;
+            color: rgb(248, 124, 0);
+            font-weight: 900;
+            font-family: "Atma", system-ui;
+        }
+
+        a.three:hover {
+            background-image: url('./ludo\ images/Players/three.png');
+            background-size: 100% 100%;
+            /* color: black */
+        }
+        
+        a.four:hover {
+            background-image: url('./ludo\ images/Players/four.png');
+            background-size: 100% 100%;
+            color: rgb(0, 255, 47);
+        }
 }
 
-@media screen {
-    
-}
+@media (max-width: 900px) {
+    div#center_stage {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            
+            font-family: "Atma", system-ui;
+        }
 
-a.three:hover {
-    background-image: url('./ludo\ images/Players/three.png');
-    background-size: 100% 100%;
-    /* color: black */
-}
+        a.two:hover
+        {
+            background-image: url('./ludo\ images/Players/2-players.png');
+            background-size: 100% 100%;
+            color: goldenrod;
+        }
 
-a.four:hover {
-    background-image: url('./ludo\ images/Players/four.png');
-    background-size: 100% 100%;
-    color: rgb(0, 255, 47);
+        a.three:hover {
+            background-image: url('./ludo\ images/Players/three.png');
+            background-size: 100% 100%;
+            color: goldenrod;
+        }
+        
+        a.four:hover {
+            background-image: url('./ludo\ images/Players/four.png');
+            background-size: 100% 100%;
+            color: rgb(217, 1, 1)
+        }
 }
