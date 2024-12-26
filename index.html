@@ -12,12 +12,26 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Kablammo&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
+        <link rel="stylesheet" href="./Public/first_Page.css">
 </head>
 <body>
+        <div class="Instruction-Set unfade">
+            <div id="Welcome-Page" class="">
+                <h2 class="Welcome-heading-1"></h2>
+                <div class="Instruction-buttons">
+                    <a href="javascript:void(0)" class="inst startGame" onclick="getItStarted()">Start Game</a>
+                    <a href="javascript:void(0)" class="inst seeInst" onclick="Goto_inst()">See Instructions</a>
+                </div>
+            </div>
+        </div>
+
         <div id="center_stage">
             <a href="./Players/Player_2/main.html" class="Player_detail two">2 Players</a>
             <a href="./Players/Player_3/main.html" class="Player_detail three">3 Players</a>
             <a href="./Players/Player_4/main.html" class="Player_detail four">4 Players</a> 
+        
+            
+        <script type="text/javascript" src="./Public/first_Page.js"></script>
     </div>
 </body>
 </html>

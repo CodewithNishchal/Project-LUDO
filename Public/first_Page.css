@@ -1,0 +1,318 @@
+body
+{
+    background-image: url('../ludo\ images/Background/traditional ludo image background with Indian touch.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/* Instruction set Box */
+
+.Instruction-Set
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div#Welcome-Page
+{
+    height: 90%;
+    width: 90%;
+    top: 0;
+    left: 0;
+    border-radius: 10%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Welcome-heading-1
+{
+    text-align: center;
+    font-family: "Atma", system-ui;
+    font-weight: 400;
+    font-size: 20vh;   
+    padding-bottom: 0%;
+    margin-bottom: 3%;
+    padding-top: 10vh; 
+    background-image: url('../ludo\ images/back.jpg');
+    background-repeat: no-repeat;
+    background-clip: text;
+    color: transparent;
+    animation-delay: 1s;
+}
+
+.justify
+{
+    background-repeat: no-repeat;
+    animation: backAppear 2s ease-in-out forwards;
+}
+
+.Welcome-heading-2
+{
+    text-align: center;
+    font-family: "Atma", system-ui;
+    font-weight: 400;
+    font-size: 20vh;
+    padding-bottom: 0%;
+    margin-bottom: 3%;
+    padding-top: 10vh;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-clip: text;
+    animation: colorChange 2s ease-in-out forwards;
+}  
+
+.Instruction-buttons
+{
+    visibility: hidden;
+    height: 20%;
+    width: 100%;
+    margin-bottom: 6%;
+    background-color: transparent;
+    border-bottom-right-radius: 30%;
+    border-bottom-left-radius: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.inst 
+{
+    color: goldenrod;
+    text-decoration: none;
+    font-size: 4vh;
+    height: 90%;
+    width: 20%;
+    background-color: rgba(0, 0, 0, 0.584);
+    border-radius: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: height 0.5s,
+        width 0.5s,
+        background-image 0.5s ease-in-out,
+        color 0.5s,
+        font-size 0.5s,
+        font-family 0.5s;;
+}
+
+.inst:hover
+{
+    height: 100%;
+    width: 25%;
+    font-size: 6vh;
+}
+
+
+
+/* Main body to start game */
+
+div#center_stage
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    visibility: hidden;
+}
+
+a.Player_detail
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+    width: 30vh;
+    border-radius: 15%;
+    background: rgb(154, 222, 194);
+    background: linear-gradient(90deg, rgba(154, 222, 194, 1) 0%, rgba(238, 152, 12, 1) 100%);
+    margin: 2%;
+    text-decoration: none;
+    color: rgb(121, 28, 104);
+    font-size: 5vh;
+    font-weight: 500;
+    transition: height 0.5s, width 0.5s, background-image 0.5s ease-in-out, color 0.5s, font-size 0.5s, font-family 0.5s;
+    font-family: "Atma", system-ui;
+}
+
+@media (min-width: 900px) {
+    a.Player_detail:hover {
+            text-decoration: none;
+            font-size: 6vh;
+            height: 35vh;
+            width: 40vh;
+            background-image: url('../ludo\ images/Players/2-players.png');
+            background-size: 100% 100%;
+            font-family: "Atma", system-ui;
+            border-radius: 20%;
+            color: rgb(248, 124, 0);
+            font-weight: 900;
+            font-family: "Atma", system-ui;
+        }
+
+        a.three:hover {
+            background-image: url('../ludo\ images/Players/three.png');
+            background-size: 100% 100%;
+            /* color: black */
+        }
+        
+        a.four:hover {
+            background-image: url('../ludo\ images/Players/four.png');
+            background-size: 100% 100%;
+            color: rgb(0, 255, 47);
+        }
+}
+
+@media (max-width: 700px) {
+    div#center_stage {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: "Atma", system-ui;    
+        }
+
+        a.two:hover
+        {
+            background-image: url('../ludo\ images/Players/2-players.png');
+            background-size: 100% 100%;
+            color: goldenrod;
+        }
+
+        a.three:hover {
+            background-image: url('../ludo\ images/Players/three.png');
+            background-size: 100% 100%;
+            color: goldenrod;
+        }
+        
+        a.four:hover {
+            background-image: url('../ludo\ images/Players/four.png');
+            background-size: 100% 100%;
+            color: rgb(217, 1, 1)
+        }
+}
+
+
+.Welcome-LtoR
+{
+    animation: Welcome-LtoR 1s ease-in-out forwards;
+}
+
+.Welcome-RtoL
+{
+    animation: Welcome-RtoL 0.5s ease-in-out forwards;
+}
+
+
+/* Animations CSS */
+.unfade {
+    animation: appear 0.5s forwards;
+}
+
+.fade {
+    animation: disappear 1s forwards;
+}
+
+.make_it_appear {
+    animation-name: appear;
+    animation-duration: 1s;
+}
+
+.make_it_disappear {
+    animation-name: disappear;
+    animation-duration: 1s;
+}
+
+
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes Welcome-LtoR {
+    0%{
+        opacity: 0;
+        /* background-position: 100vh 0; */
+        background-size: 10% 100%;
+    }
+
+    100%
+    {
+        opacity: 1;
+        /* background-position: 0% 0; */
+        background-size: 100% 100%;
+    }
+}
+
+@keyframes Welcome-RtoL {
+    0% {
+            opacity: 0;
+            /* background-position: 100vh 0; */
+            background-size: 100% 100%;
+        }
+    
+        100% {
+            opacity: 1;
+            /* background-position: 0vh 0; */
+            background-size: 1% 100%;
+        }
+}
+
+@keyframes backAppear {
+    0%{
+        /* opacity: 0; */
+        background-image: url('../ludo\ images/back.jpg');
+        background-position: center;
+        background-size: 0% 0%;
+    }
+
+    100%{
+        /* opacity: 1; */
+        background-position: center;
+        background-image: url('../ludo\ images/back.jpg');
+        background-size: 100% 100%;
+
+    }
+}
+
+@keyframes colorChange {
+    0%{
+        color: initial;
+        background-image: none;
+        background-position: center;
+        background-size: 0% 0%;
+    }
+    100%{
+        color: transparent;
+        background-image: url('../ludo\ images/back 2.jpg');
+        background-size: 100% 100%;
+        background-position: center;
+    }
+}
