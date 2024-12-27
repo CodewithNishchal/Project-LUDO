@@ -44,6 +44,8 @@ function getItStarted()
 {
     document.querySelector('div#Welcome-Page > .Instruction-buttons').classList.remove('unfade');
     document.querySelector('div#Welcome-Page > .Instruction-buttons').classList.add('fade');
+    document.querySelector('.instructions-1').classList.remove('unfade');
+    document.querySelector('.instructions-1').classList.add('fade');
     setTimeout(function () {
         document.querySelector('.Instruction-Set').classList.remove('unfade');
         document.querySelector('.Instruction-Set').classList.add('fade');
@@ -57,7 +59,87 @@ function getItStarted()
 
 function Goto_inst()
 {
+    document.querySelector('div#Welcome-Page > .Instruction-buttons').classList.remove('unfade');
+    document.querySelector('div#Welcome-Page > .Instruction-buttons').classList.add('fade');
 
+    setTimeout(function () {
+        document.querySelector('div#Welcome-Page > h2').style.display = 'none';
+        document.querySelector('div#Welcome-Page > .Instruction-buttons').style.display = 'none';
+        document.querySelector('.instructions-1').classList.add('unfade');
+        document.querySelector('.instructions-1').style.display = "grid";
+        
+        //Move to next Instruction
+        document.querySelector('button.move-next').addEventListener('click', instruction_2);
+    },1000);
+}
+
+function instruction_2()
+{
+    document.querySelector('.instructions-1 > .heading > h1').innerHTML = "Move your Player";
+    document.querySelector('.instructions-1 > .heading').classList.add('unfade');
+    document.querySelector('.instructions-1 > .details > p').innerHTML = "To move your bead in the game, <b>CLICK</b> the bead.";
+    document.querySelector('.instructions-1 > .details > p').classList.add('unafade');
+    document.querySelector('.instructions-1 > .video > video').setAttribute('src', "./ludo images/Video content/Move Player.mp4");
+    document.querySelector('.instructions-1 > .video > video').classList.add('unfade');
+    document.querySelector('button.move-next').removeEventListener('click', instruction_2);
+    document.querySelector('button.move-next').addEventListener('click', instruction_3);
+}
+
+function instruction_3()
+{
+    document.querySelector('.instructions-1 > .heading').classList.remove('unfade');
+    document.querySelector('.instructions-1 > .heading').classList.remove('unfade');
+    document.querySelector('.instructions-1 > .heading').classList.remove('unfade');
+
+    setTimeout(function () {
+        document.querySelector('.instructions-1 > .heading > h1').innerHTML = "Start from the House";
+        document.querySelector('.instructions-1 > .heading').classList.add('unfade');
+        document.querySelector('.instructions-1 > .details > p').innerHTML = "Players will be able to unlock their beads only at <b>1</b> or <b>6</b>";
+        document.querySelector('.instructions-1 > .heading').classList.add('unfade');
+        document.querySelector('.instructions-1 > .video > video').setAttribute('src', "./ludo images/Video content/Start from House.mp4");
+        document.querySelector('.instructions-1 > .heading').classList.add('unfade');
+        document.querySelector('button.move-next').removeEventListener('click', instruction_3);
+        document.querySelector('button.move-next').addEventListener('click', instruction_4);
+    }, 200);
+    
+}
+
+function instruction_4()
+{
+    document.querySelector('.instructions-1 > .heading').classList.remove('unfade');
+    document.querySelector('.instructions-1 > .heading').classList.remove('unfade');
+    document.querySelector('.instructions-1 > .heading').classList.remove('unfade');
+
+    setTimeout(function () {
+        document.querySelector('.instructions-1 > .heading > h1').innerHTML = "Clash with other Players";
+        document.querySelector('.instructions-1 > .heading').classList.add('unfade');
+        document.querySelector('.instructions-1 > .details > p').innerHTML = "Players can remove other Players' bead from the game by <b>Occupying</b> their spot.";
+        document.querySelector('.instructions-1 > .heading').classList.add('unfade');
+        document.querySelector('.instructions-1 > .video > video').setAttribute('src', "./ludo images/Video content/Remove other player.mp4");
+        document.querySelector('.instructions-1 > .heading').classList.add('unfade');
+        document.querySelector('button.move-next').removeEventListener('click', instruction_4);
+        document.querySelector('button.move-next').addEventListener('click', instruction_5);
+    }, 200);
 }
 
 
+function instruction_5()
+{
+    document.querySelector('.instructions-1 > .heading').classList.remove('unfade');
+    document.querySelector('.instructions-1 > .heading').classList.remove('unfade');
+    document.querySelector('.instructions-1 > .heading').classList.remove('unfade');
+    document.querySelector('.instructions-1 > .details > button.move-next').classList.remove('unfade');
+
+    setTimeout(function () {
+        document.querySelector('.instructions-1 > .heading > h1').innerHTML = "Getting more Chance than One";
+        document.querySelector('.instructions-1 > .heading').classList.add('unfade');
+        document.querySelector('.instructions-1 > .details > p').innerHTML = "Players will get <b>repeated chance</b> either on a <b>6</b> or <b>removing other player from game</b>";
+        document.querySelector('.instructions-1 > .heading').classList.add('unfade');
+        document.querySelector('.instructions-1 > .video > video').setAttribute('src', "./ludo images/Video content/Repeated Chance.mp4");
+        document.querySelector('.instructions-1 > .heading').classList.add('unfade');
+        document.querySelector('.instructions-1 > .details > button.move-next').innerHTML = "Start Game";
+        document.querySelector('.instructions-1 > .details > button.move-next').classList.add('unfade');
+        document.querySelector('button.move-next').removeEventListener('click', instruction_5);
+        document.querySelector('button.move-next').addEventListener('click', getItStarted);
+    }, 200);
+}

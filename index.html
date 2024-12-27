@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Select Player</title>
+    <title>Home</title>
     <link rel="stylesheet" href="./first_Page.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,17 @@
                     <a href="javascript:void(0)" class="inst startGame" onclick="getItStarted()">Start Game</a>
                     <a href="javascript:void(0)" class="inst seeInst" onclick="Goto_inst()">See Instructions</a>
                 </div>
-            </div>
+                <div class="instructions-1">
+                        <div style="grid-column: span 2;" class="instruction-div heading"><h1>Roll The Dice</h1></div>
+                        <div class="instruction-div details">
+                            <p>Press the <b>ROLL</b> button to roll the dice.</p>
+                            <button class="move-next">Next =></button>
+                        </div>
+                        <div class="instruction-div video">
+                            <video width="600" class="inst-1" autoplay loop muted src="./ludo images/Video content/Dice_roll.mp4">
+                            </video>
+                        </div>
+                </div>
 
 
             </div>
@@ -34,7 +44,7 @@
             <a href="./Players/Player_4/main.html" class="Player_detail four">4 Players</a> 
         
             
-        <!-- <script type="text/javascript" src="./Public/first_Page.js"></script> -->
+        <script type="text/javascript" src="./Public/first_Page.js"></script>
     </div>
 </body>
 </html>

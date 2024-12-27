@@ -113,7 +113,90 @@ div#Welcome-Page
     font-size: 6vh;
 }
 
+
+
 /* Instructions Panel if chosen */
+
+/* Instruction 1 */
+.instructions-1
+{
+    height: 100%;
+    width: 100%;
+    /* background-color: black; */
+    border-radius: 10%;
+    background-image: url('../ludo\ images/Background/instructions-back.jpg');
+    background-size: 100% 100%;
+    display: grid;
+    grid-template: 0.2fr 1fr / 1fr 0.8fr;
+    display: none;
+}
+
+.instruction-div
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.instructions-1>.heading
+{
+    font-size: 5vh;
+    font-family: "Atma", system-ui;
+    margin: 0%;
+}
+
+.instructions-1>.heading > h1{
+    margin: 0%;
+    padding: 0%;
+    margin-top: 2%;
+}
+
+.details
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.details > p
+{
+    font-size: 5vh;
+    font-weight: 2vh;
+    font-family: "Atma", system-ui;
+    margin-left: 3%;
+}
+
+button.move-next
+{
+    margin-top: 10vh;
+    margin-bottom: 0vh;
+    height: 10%;
+    width: 20%;
+    border-radius: 10%;
+    font-size: 3vh;
+    background-color: rgb(218, 79, 32);
+    transition: font-size 0.5s, height 0.5s, width 0.5s;
+    animation: appear 1s ease-in-out forwards;
+}
+
+button.move-next:hover
+{
+    font-size: 3.2vh;
+    height: 11%;
+    width: 21%;
+}
+
+.video
+{
+    padding-bottom: 10vh;
+}
+
+.inst-1
+{
+    border-radius: 10%;
+    margin-bottom: 2vh;
+}
 
 
 
@@ -267,7 +350,7 @@ a.Player_detail
 
 
 /* Media query for phone adjustments */
-@media (min-width: 900px) {
+ @media (min-width: 900px) {
     a.Player_detail:hover {
         text-decoration: none;
         font-size: 6vh;
@@ -285,15 +368,15 @@ a.Player_detail
     a.three:hover {
         background-image: url('../ludo\ images/Players/three.png');
         background-size: 100% 100%;
-        /* color: black */
+        color: rgb(248, 124, 0);
     }
 
     a.four:hover {
         background-image: url('../ludo\ images/Players/four.png');
         background-size: 100% 100%;
-        color: rgb(0, 255, 47);
+        color: rgb(248, 124, 0);
     }
-}
+}  
 
 @media (max-width: 700px) {
     div#center_stage {
