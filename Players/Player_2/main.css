@@ -860,7 +860,7 @@ div.blue-04
 
 
 /* Main game adjustments for mobile Screens */
-@media (min-width: 481px) and (max-width: 1200px) {
+@media (min-width: 481px) and (max-width: 900px) {
     #main-box {
             /* filter: blur(0px); */
             display: grid;

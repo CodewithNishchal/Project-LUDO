@@ -190,12 +190,15 @@ button.move-next:hover
 .video
 {
     padding-bottom: 10vh;
+
 }
 
 .inst-1
 {
     border-radius: 10%;
     margin-bottom: 2vh;
+    width: 80%;
+    overflow: hidden; 
 }
 
 
@@ -404,5 +407,22 @@ a.Player_detail
         background-image: url('../ludo\ images/Players/four.png');
         background-size: 100% 100%;
         color: rgb(217, 1, 1)
+    }
+
+    .Welcome-heading-1
+    {
+        font-size: 10vh;
+    }
+
+    .Welcome-heading-2
+    {
+        font-size: 10vh;
+    }
+
+    .inst
+    {
+        font-size: 3vh;
+        width: 40%;
+        text-align: center;
     }
 }
