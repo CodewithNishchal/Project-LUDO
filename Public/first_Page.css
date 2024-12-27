@@ -44,7 +44,7 @@ div#Welcome-Page
     padding-bottom: 0%;
     margin-bottom: 3%;
     padding-top: 10vh; 
-    background-image: url('../ludo\ images/back.jpg');
+    background-image: url('../ludo\ images/Background/back.jpg');
     background-repeat: no-repeat;
     background-clip: text;
     color: transparent;
@@ -320,7 +320,7 @@ a.Player_detail
 @keyframes backAppear {
     0%{
         /* opacity: 0; */
-        background-image: url('../ludo\ images/back.jpg');
+        background-image: url('../ludo\ images/Background/back.jpg');
         background-position: center;
         background-size: 0% 0%;
     }
@@ -328,7 +328,7 @@ a.Player_detail
     100%{
         /* opacity: 1; */
         background-position: center;
-        background-image: url('../ludo\ images/back.jpg');
+        background-image: url('../ludo\ images/Background/back.jpg');
         background-size: 100% 100%;
 
     }
@@ -343,7 +343,7 @@ a.Player_detail
     }
     100%{
         color: transparent;
-        background-image: url('../ludo\ images/back 2.jpg');
+        background-image: url('../ludo\ images/Background/back 2.jpg');
         background-size: 100% 100%;
         background-position: center;
     }

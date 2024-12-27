@@ -874,7 +874,7 @@ div.blue-04
         div>#game-ludo {
             grid-row: span 3;
             background-color: whitesmoke;
-            background-image: url('../../ludo\ images/back.jpg');
+            background-image: url('../../ludo\ images/Background/back.jpg');
             background-repeat: no-repeat;
             background-size: 100% 100%;
             border-radius: 15%;
