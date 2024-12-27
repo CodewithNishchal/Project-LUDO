@@ -1,5 +1,5 @@
 // Checking the resolution of mobile or PC
-const mediaQuery = window.matchMedia('(min-width: 900px)');
+const mediaQuery = window.matchMedia('(min-width: 600px)');
 
 var mediaCheck = 0;
 
