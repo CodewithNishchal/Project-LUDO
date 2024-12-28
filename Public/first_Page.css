@@ -44,7 +44,7 @@ div#Welcome-Page
     padding-bottom: 0%;
     margin-bottom: 3%;
     padding-top: 10vh; 
-    background-image: url('../ludo\ images/back.jpg');
+    background-image: url('../ludo\ images/Background/back.jpg');
     background-repeat: no-repeat;
     background-clip: text;
     color: transparent;
@@ -190,12 +190,15 @@ button.move-next:hover
 .video
 {
     padding-bottom: 10vh;
+
 }
 
 .inst-1
 {
     border-radius: 10%;
     margin-bottom: 2vh;
+    width: 80%;
+    overflow: hidden; 
 }
 
 
@@ -317,7 +320,7 @@ a.Player_detail
 @keyframes backAppear {
     0%{
         /* opacity: 0; */
-        background-image: url('../ludo\ images/back.jpg');
+        background-image: url('../ludo\ images/Background/back.jpg');
         background-position: center;
         background-size: 0% 0%;
     }
@@ -325,7 +328,7 @@ a.Player_detail
     100%{
         /* opacity: 1; */
         background-position: center;
-        background-image: url('../ludo\ images/back.jpg');
+        background-image: url('../ludo\ images/Background/back.jpg');
         background-size: 100% 100%;
 
     }
@@ -340,7 +343,7 @@ a.Player_detail
     }
     100%{
         color: transparent;
-        background-image: url('../ludo\ images/back 2.jpg');
+        background-image: url('../ludo\ images/Background/back 2.jpg');
         background-size: 100% 100%;
         background-position: center;
     }
@@ -404,5 +407,22 @@ a.Player_detail
         background-image: url('../ludo\ images/Players/four.png');
         background-size: 100% 100%;
         color: rgb(217, 1, 1)
+    }
+
+    .Welcome-heading-1
+    {
+        font-size: 10vh;
+    }
+
+    .Welcome-heading-2
+    {
+        font-size: 10vh;
+    }
+
+    .inst
+    {
+        font-size: 3vh;
+        width: 40%;
+        text-align: center;
     }
 }

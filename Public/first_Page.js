@@ -1,3 +1,21 @@
+// Checking the resolution of mobile or PC
+const mediaQuery = window.matchMedia('(min-width: 600px)');
+
+var mediaCheck = 0;
+
+function handleMediaQueryChange(event) {
+    if (event.matches)
+    {
+        mediaCheck = 1;
+    }
+    else {
+        mediaCheck = 0;
+    }
+}
+
+handleMediaQueryChange(mediaQuery);
+
+
 setTimeout(function () {
     document.querySelector('div#Welcome-Page > h2').innerHTML = "Welcome";
     document.querySelector('div#Welcome-Page > h2').classList.add('Welcome-LtoR');
@@ -11,14 +29,20 @@ setTimeout(function () {
             }, 1200);
             setTimeout(function () {
                 document.querySelector('div#Welcome-Page > h2').classList.add('Welcome-LtoR');
-                document.querySelector('div#Welcome-Page > h2').style.fontSize = "10vh";
+
+                if (mediaCheck)
+                    document.querySelector('div#Welcome-Page > h2').style.fontSize = "13vh";
+                
                 document.querySelector('div#Welcome-Page > h2').innerHTML = "A Traditional game of India";
                 setTimeout(function () {
                     document.querySelector('div#Welcome-Page > h2').classList.remove("Welcome-LtoR");
                 }, 1100);
                 setTimeout(function () {
                     document.querySelector('div#Welcome-Page > h2').classList.add("unfade");
-                    document.querySelector('div#Welcome-Page > h2').style.fontSize = "20vh";
+                    
+                    if (mediaCheck)
+                        document.querySelector('div#Welcome-Page > h2').style.fontSize = "20vh";
+
                     document.querySelector('div#Welcome-Page > h2').innerHTML = "Chausar";
                         
                     setTimeout(function () {
@@ -59,6 +83,9 @@ function getItStarted()
 
 function Goto_inst()
 {
+    if (!mediaCheck)
+        alert("Please rotate your phone for better understanding.")
+
     document.querySelector('div#Welcome-Page > .Instruction-buttons').classList.remove('unfade');
     document.querySelector('div#Welcome-Page > .Instruction-buttons').classList.add('fade');
 

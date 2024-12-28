@@ -25,6 +25,25 @@ setTimeout(function () {
     interrupt.classList.add('make_it_appear');
 }, 1000);
 
+// Checking the resolution of mobile or PC
+const mediaQuery = window.matchMedia('(min-width: 600px)');
+
+var mediaCheck = 0;
+
+function handleMediaQueryChange(event) {
+    if (event.matches)
+    {
+        mediaCheck = 1;
+    }
+    else {
+        mediaCheck = 0;
+    }
+}
+
+handleMediaQueryChange(mediaQuery);
+
+if (!mediaCheck)
+    alert('Please rotate your Phone for better experience');
 
 
 //Choose Player 1 and Player 2
