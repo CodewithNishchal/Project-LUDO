@@ -330,7 +330,7 @@ function start_base() {
                     Player_winning[colors.indexOf(playerName)]++;
 
                     //Move the bead to final stop
-                    bead_motion(initial_distance, 56, playerName, playerNo);  
+                    bead_motion_final(initial_distance, 56, playerName, playerNo);  
 
                     //Tell the Player that the bead has reached the home
                     setTimeout(function () {
@@ -386,6 +386,25 @@ function start_base() {
     
         //Bead as well as Base motion over iteration logic
         function bead_motion(initial_distance, final_distance,playerName,playerNo)
+        {
+            if (initial_distance >= final_distance)
+            {
+                return;
+            }
+
+            else if(initial_distance < final_distance) {
+                setTimeout(function () {
+                        document.querySelector('div.game-area.' + playerName + '-' + initial_distance).classList.remove(playerName + '-' + '0' + (playerNo + 1));
+                        document.querySelector('div.game-area.' + playerName + '-' + (initial_distance + 1)).classList.add(playerName + '-' + '0' + (playerNo + 1));
+                        initial_distance++;
+                        bead_motion(initial_distance, final_distance, playerName, playerNo);
+                }, 500);
+            }
+        }
+        
+
+        // FInal Bead motion 
+        function bead_motion_final(initial_distance, final_distance,playerName,playerNo)
         {
             if (initial_distance >= final_distance)
             {
