@@ -516,7 +516,7 @@ function start_base() {
                         document.querySelector('div.game-area.' + playerName + '-' + initial_distance).classList.remove(playerName + '-' + '0' + (playerNo + 1));
                         document.querySelector('div.game-area.' + playerName + '-' + (initial_distance + 1)).classList.add(playerName + '-' + '0' + (playerNo + 1));
                         initial_distance++;
-                        bead_motion(initial_distance, final_distance, playerName, playerNo);
+                        bead_motion_final(initial_distance, final_distance, playerName, playerNo);
                 }, 500);
             }
         }
